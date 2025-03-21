@@ -11,7 +11,7 @@ import { ChevronDown } from "lucide-react";
  
 export default function SiteHeader() {
   const navigation = [
-  { name: "Technology", href: "/" },
+  { name: "Technology", href: "/technology" },
   {
     name: "Consultancy",href: "#",
   },

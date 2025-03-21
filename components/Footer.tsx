@@ -11,24 +11,25 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
             <Link href="/" className='hover:text-orange-400'>Home</Link>
-            <Link href="/" className='hover:text-orange-400'>Who We Are </Link>
-            <Link href="/" className='hover:text-orange-400'>Growth Engines</Link>
-            <Link href="/" className='hover:text-orange-400'>Market Focus</Link>
-            <Link href="/" className='hover:text-orange-400'>Sustainability</Link>
+            <Link href="/" className='hover:text-orange-400'>Technology </Link>
+            <Link href="/" className='hover:text-orange-400'>Consultancy</Link>
+            <Link href="/" className='hover:text-orange-400'>Real Estate</Link>
+            <Link href="/" className='hover:text-orange-400'>Event Management</Link>
             <p className='text-blue-500'>Insights</p>
-            <Link href="/" className='hover:text-orange-400'>Careers</Link>
-            <Link href="/" className='hover:text-orange-400'>Contact Us</Link>
-            <Link href="/" className='hover:text-orange-400'>FAQ</Link>
+            <Link href="/" className='hover:text-orange-400'>Transport & Logistics</Link>
+            <Link href="/" className='hover:text-orange-400'>Media</Link>
+            <Link href="/" className='hover:text-orange-400'>Tours & Travel</Link>
             </div>
         </div>
         <div className="space-y-8">
             {/* Footer Locations Nigeria */}
             <article className='space-y-2'>
-            <h2 className='text-lg font-bold'>PE Energy Limited</h2>
+            <h2 className='text-lg font-bold'>Smart Solutions Limited</h2>
             <p className='text-orange-400'>Port Harcourt, Nigeria</p>
             <p >Centre of Excellence: Plot 94 Rivoc Road, Trans Amadi Industrial Layout, Port Harcourt, Rivers State.
-No 54 Emekuku Street, D-Line, Port Harcourt, Rivers State, Nigeria.
-Tel: +234 702 600 0116</p>
+                No 54 Emekuku Street, D-Line, Port Harcourt, Rivers State, Nigeria.
+                Tel: +234 702 600 0116
+            </p>
             </article>
             <article className='space-y-2'>
             <p className='text-orange-400'>Abuja, Nigeria</p>
