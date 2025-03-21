@@ -7,18 +7,20 @@ import Image from 'next/image'
 import React from 'react'
 
 const page = () => {
-  const boardLink = ["/about/gmd.jpg", "/about/iyenemi.png", "/about/lawrence.jpg"]
+  const boardLink = ["/about/gmd.jpg",
+                    "/about/iyenemi.png",
+                     "/about/lawrence.jpg"]
   const managementLink = ["/about/daisy.png", "/about/nneka.png", "/about/elena.jpg", "/about/emuesiri.png"]
   const policiesLink = ["/about/cashes.png", "/about/ncd.png", "/about/quality.png"]
   const remainder = managementLink.length % 3;
   return (
     <div className="relative">
-      <SecondaryCarousel id = 'whoWeAre' img = "/about/pe-sign.JPG" alt = 'who we are' title = 'Who We Are'/>
+      <SecondaryCarousel id = 'whoWeAre' img = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3liZXIlMjB0ZWNofGVufDB8fDB8fHww" alt = 'Cyber Technology: ' title = 'Cyber Technology'/>
       <section className='mt-[250px]  bg-gray-100 text-[#444444]'>
       {/* Hero One */}
       <div className="text-center max-w-5xl mx-auto py-12 px-6 space-y-4">
-        <h2 className='text-lg font-bold'>PE Energy Limited is a Total Solution provider of Flow Control (Valves & Actuation), Measurement Solution, Flow Drives (Rotating Equipment), and Supply Chain Solution.</h2>
-        <p text-lg>Powered by Our Life Cycle Model: Engineering Procurement, Integration, Installation and Maintenance (epiimtce) Model,</p>
+        <h2 className='text-lg font-bold'>Innovative solutions for a digital world. Our technology services provide cutting-edge solutions for businesses and individuals</h2>
+        <p text-lg>Powered by Our Life Cycle Model: Engineering Procurement, Integration, Installation and Maintenance Models,</p>
       </div>
       </section>
       <section className='text-[#444444] max-w-5xl px-4 mx-auto py-8 lg:flex lg:flex-col lg:items-center lg:px-5 space-y-4 lg:space-y-12' id="ourPrinciples">

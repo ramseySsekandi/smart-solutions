@@ -18,22 +18,22 @@ const items = [
     {
       title: "2013",
       description: "Exploring the latest trends in software development and AI-driven solution.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      image: "https://plus.unsplash.com/premium_photo-1687463804252-23a91b3b7f51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dGVjaCUyMGhpc3Rvcnl8ZW58MHx8MHx8fDA%3D"
     },
     {
       title: "2022",
       description: "Analyzing Uganda’s political landscape with expert opinions and discussions.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      image: "https://images.unsplash.com/photo-1713244433542-4c6205d09d97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHRlY2glMjBoaXN0b3J5fGVufDB8fDB8fHww"
     },
     {
       title: "2024",
       description: "Building modern, scalaable applications with cutting-edge technologies.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      image: "https://plus.unsplash.com/premium_photo-1687572807160-b5262826e4df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dGVjaCUyMGhpc3Rvcnl8ZW58MHx8MHx8fDA%3D"
     },
     {
       title: "2025",
       description: "Tips and strategies for launching and growing a successful business.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      image: "https://media.istockphoto.com/id/1254724408/photo/e-book-digital-technology-and-e-learning.webp?a=1&b=1&s=612x612&w=0&k=20&c=eGmsfKNmNPR0Ge_wchoMWlVSuMyQtAq5G0Kjsuwt_0Y="
     }
   ];
 

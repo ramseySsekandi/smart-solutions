@@ -13,7 +13,7 @@ export default function SiteHeader() {
   const navigation = [
   { name: "Technology", href: "/technology" },
   {
-    name: "Consultancy",href: "#",
+    name: "Consultancy",href: "/consultancy",
   },
   { name: "Real Estate", href: "/contact" },
   { name: "Event Management", href: "/experience" },
