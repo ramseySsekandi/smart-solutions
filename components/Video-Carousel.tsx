@@ -27,7 +27,7 @@ const VideoCarousel: React.FC = () => {
     },
 
     {
-      videoUrl: './videos/hightech-4k.mp4',
+      videoUrl: './videos/high-tech.mp4',
       title: "Visit Our Business Technology",
       buttonAction: () => alert("Explore More clicked!")
     }

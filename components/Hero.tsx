@@ -18,45 +18,61 @@ const Hero = () => {
           <h2 className='text-2xl font-bold'>Our Vision</h2>
           <Target size={48} />
           </div>
-          <p className='text-center px-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum porro nihil atque error quasi omnis.</p>
+          <p className='text-center px-4'>Our vision is to be a leading global provider of innovative solutions,
+             services, and support, empowering individuals, businesses, and communities to thrive and succeed.</p>
          </div>
          <div className="space-y-8 space-x-4 lg:w-1/2 mx-auto flex flex-col items-center justify-center">
          <div className="flex justify-center items-center gap-4 text-center">
           <h2 className='text-2xl font-bold'>Our Mission</h2>
           <Target size={48} />
           </div>
-          <p className='text-center px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure fuga nemo mollitia dignissimos in, porro fugiat explicabo amet laudantium vel.</p>
+          <p className='text-center px-4'>Our mission is to deliver exceptional value to our clients,
+             partners, and stakeholders through our diverse range of services, including technology, 
+             consultancy, real estate, event management, transport and logistics, media communication
+              and entertainment, tours and travel, publishing, and foundation services. We are committed
+              to excellence, integrity, and sustainability in all our endeavors.</p>
          </div>
         </div>
         {/* Credibility */}
-        <article className='bg-[#000818] text-white text-center space-y-8 px-6 py-5 lg:flex lg:justify-center'>
-         <div className="space-y-8 lg:max-w-5xl w-full ">
+        <article className='bg-[#000818] text-white text-center space-y-8 px-6 py-5 gap-18 lg:flex lg:justify-center'>
+         <div className="space-y-8 max-w-3xl">
+         <div className="lg:flex lg:flex-col lg:justify-center lg:gap-4">
          <h1 className='text-2xl font-bold'>
           Why us? Our <span className='text-[#0085CA]'>Strenghts.</span>
           </h1>
-          <div className="flex justify-center gap-2 text-left">
+         <div className="max-w-3xl mx-auto space-y-8">
+         <div className="flex justify-center gap-2 text-left">
             <img src="/image (1).png" alt="Image Icon"className='w-10 h-10' />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur ?</p>
+            <p>We embrace innovation and stay ahead of the curve in terms of industry trends and best practices.</p>
           </div>
           <div className="flex justify-center gap-2 text-left">
             <img src="/image (1).png" alt="Image Icon"className='w-10 h-10' />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur ?</p>
+            <p>Our team comprises seasoned professionals with extensive expertise in their respective fields.
+              We leverage this expertise to deliver high-quality services that exceed our clients' expectations.</p>
           </div>
           <div className="flex justify-center gap-2 text-left">
             <img src="/image (1).png" alt="Image Icon"className='w-10 h-10' />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur ?</p>
+            <p>We understand that every client is unique, with distinct needs and goals
+              We provide personalized service, tailoring our solutions to meet each client's
+              specific requirements.</p>
           </div>
           <div className="flex justify-center gap-2 text-left">
             <img src="/image (1).png" alt="Image Icon"className='w-10 h-10' />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur ?</p>
+            <p>We recognize our responsibility to give back to the community.
+              Our foundation services support various social causes, demonstrating our commitment to social
+              responsibility and sustainability.</p>
           </div>
           <div className="flex justify-center gap-2 text-left">
             <img src="/image (1).png" alt="Image Icon"className='w-10 h-10' />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur ?</p>
+            <p>We are dedicated to delivering exceptional quality in everything we do.
+               Our commitment to excellence is reflected in our rigorous quality control
+                processes and our passion for continuous improvement.</p>
           </div>
          </div>
-        <div className="lg:w-7/12 ">
-          <img src="eye.png" alt="failed to load img" className='rounded-lg w-full' />
+         </div>
+         </div>
+        <div className="lg:w-7/12 lg:max-w-5xl">
+          <img src="https://media.istockphoto.com/id/1344939844/photo/hand-holding-drawing-virtual-lightbulb-with-brain-on-bokeh-background-for-creative-and-smart.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q1LGFdFoZQ0YRWTcHtSZpvfJ_DtgD86aMMuUYxPtz8s=" alt="failed to load img" className='rounded-lg w-full' />
         </div>
         </article>
         {/* Hero Carousel Two */}

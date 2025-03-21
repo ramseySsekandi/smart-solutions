@@ -11,29 +11,29 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, Car
 
 const items = [
     {
-      title: "Eco-Friendly Farmings",
-      description: "Using biodegradable wast to create organic fertilizer for sustainable agriculture.",
-     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      title: "Consultancy",
+      description: "Expert guidance for business success. Our consultancy services provide strategic advice and support for businesses and organizations.",
+     image: "https://media.istockphoto.com/id/1502896527/photo/office-meeting-and-documents-of-business-people-clients-or-team-for-taxes-audit-or-revenue.webp?a=1&b=1&s=612x612&w=0&k=20&c=k4-TacdiVfmnFcjt_Y3Y7YKnOqXV4WY0sdwV8bjokIE="
     },
     {
       title: "Tech Innovations",
-      description: "Exploring the latest trends in software development and AI-driven solution.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      description: "Innovative solutions for a digital world. Our technology services provide cutting-edge solutions for businesses and individuals",
+      image: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D"
     },
     {
-      title: "Political Insights",
-      description: "Analyzing Uganda’s political landscape with expert opinions and discussions.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      title: "Event Management",
+      description: "Memorable events and experiences. Our event management services provide expert planning and coordination for events and functions.",
+      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnQlMjBtYW5hZ2VtZW50fGVufDB8fDB8fHww"
     },
     {
-      title: "Web Development",
-      description: "Building modern, scalaable applications with cutting-edge technologies.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      title: "Transport & Logistics",
+      description: "Efficient and reliable transportation solutions. Our transport and logistics services provide secure and timely delivery of goods and packages",
+      image: "https://media.istockphoto.com/id/2157040201/photo/truck-carrying-forty-foot-container-leaving-port-terminal-with-ship-and-quay-crane-on-the.webp?a=1&b=1&s=612x612&w=0&k=20&c=LU5DThx8ejIzZCqMtvkX4Cr3_WZyHv4SCZ-L0WLwK3w="
     },
     {
-      title: "Entrepreneursip",
-      description: "Tips and strategies for launching and growing a successful business.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0ZWNobm9sb2d5fGVufDB8fHx8MTY4MjcyNjQyMA&ixlib=rb-1.2.1&q=80&w=400"
+      title: "Tours and Travel",
+      description: "Unforgettable travel experiences. Our tours and travel services provide expert planning and coordination for trips and vacations.",
+      image: "https://images.unsplash.com/photo-1461237439866-5a557710c921?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG91cnMlMjBhbmQlMjB0cmF2ZWx8ZW58MHx8MHx8fDA%3D"
     }
   ];
 
