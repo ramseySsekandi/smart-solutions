@@ -11,36 +11,17 @@ import { ChevronDown } from "lucide-react";
  
 export default function SiteHeader() {
   const navigation = [
-  { name: "Home", href: "/" },
+  { name: "Technology", href: "/" },
   {
-    name: "About Us",
-    href: "#",
-    children: [
-      { name: "Who We Are", href: "/about/#whoWeAre" },
-      { name: "--Our Principles", href: "/about/#ourPrinciples" },
-      { name: "--Our Leadership", href: "/about/#ourLeadership" },
-      { name: "--Our History", href: "/about/ourHistory" },
-      { name: "--Our Policies", href: "/about/mission" },
-    ],
+    name: "Consultancy",href: "#",
   },
-  {
-    name: "Our Solutions",
-    href: "#",
-    children: [
-      { name: "--Flow Drives (Rotating Equipment)", href: "/solutions/1" },
-      { name: "--Flow Measurements Solutions", href: "/solutions/1" },
-      { name: "--Flow Control (Valves & Actuation)", href: "/solutions/1" },
-      { name: "--Supply Chain Management", href: "/solutions/1" },
-      { name: "DK-Lok Nigeria", href: "/solutions/1" },
-    ],
-  },
-  { name: "Our Experience", href: "/experience" },
-  { name: "Market Experience", href: "/market-experience" },
-  { name: "Sustainability", href: "/sustainability" },
-  { name: "Insights", href: "/insights" },
-  { name: "Careers", href: "/careers" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact Us", href: "/contact" },
+  { name: "Real Estate", href: "/contact" },
+  { name: "Event Management", href: "/experience" },
+  { name: "Transport & Logistics", href: "/market-experience" },
+  { name: "Media", href: "/sustainability" },
+  { name: "Tours and Travel", href: "/insights" },
+  { name: "Publishing", href: "/careers" },
+  { name: "Foundation", href: "/faq" },
 ];
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
