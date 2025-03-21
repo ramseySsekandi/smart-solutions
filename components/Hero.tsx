@@ -83,7 +83,7 @@ const Hero = () => {
             <img src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2FyZWhvdXNlfGVufDB8fDB8fHww" alt="Hero about" className='w-full h-full' />
           </div>
           <div className="px-6 space-y-8 lg:w-5/12">
-            <h2 className='text-3xl font-bold'>This Company expands its solutions to </h2>
+            <h2 className='text-3xl font-bold'>Smart Solutions Ltd expands its solutions to </h2>
             <p className=''>We are happy to announce that our company has been restructured
                and reengineered to include epiimtce – Engineering Design,
                 Procurement/Supply Chain, Integration, Installation and Maintenance
