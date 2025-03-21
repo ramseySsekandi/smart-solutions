@@ -83,38 +83,15 @@ export default function SiteHeader() {
         <div className="hidden lg:flex lg:gap-x-6">
           {navigation.map((item) => (
             <div key={item.name} className="relative">
-                      {item.children ? (
-                        <button
-                          onClick={() => toggleDropdown(item.name)}
-                          className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-0.5"
-                        >
-                          {item.name}
-                          <ChevronDown size={16} />
-                        </button>
-                      ) : (
-                        <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
-            >
-              {item.name}
-            </Link>
-                      )}
-                      {item.children && openDropdown === item.name && (
-                        <div ref={dropdownRef} className="absolute left-0 mt-2 w-max bg-white shadow-lg rounded-md z-50">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.name}
-                              href={child.href}
-                              onClick={() => setOpenDropdown(null)}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400
+                hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+              >
+                {item.name}
+              </Link>
+            </div>
           ))}
         </div>
         
@@ -143,16 +120,7 @@ export default function SiteHeader() {
               <div className="space-y-5 py-6">
               {navigation.map((item) => (
                       <div key={item.name} className="relative">
-                      {item.children ? (
-                        <button
-                          onClick={() => toggleDropdown(item.name)}
-                          className="font-bold leading-6 text-[#444444] lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-0.5"
-                        >
-                          {item.name}
-                          <ChevronDown size={16} />
-                        </button>
-                      ) : (
-                        <Link
+                      <Link
                           key={item.name}
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
@@ -160,21 +128,6 @@ export default function SiteHeader() {
                         >
                           {item.name}
                         </Link>
-                      )}
-                      {item.children && openDropdown === item.name && (
-                        <div ref={dropdownRef} className="absolute left-0 mt-2 w-11/12 bg-white shadow-lg rounded-md z-50">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.name}
-                              href={child.href}
-                              onClick={() => setOpenDropdown(null)}
-                              className="block px-4 py-2 text-sm text-[#444444] hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
                     </div>
           ))}
               </div>

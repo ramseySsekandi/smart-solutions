@@ -16,19 +16,19 @@ const VideoCarousel: React.FC = () => {
 
   const slides: Slide[] = [
     {
-      videoUrl: './videos/videoOne.mp4',
-      title: "Your EPiiMtce Partner",
+      videoUrl: './videos/high-tech.mp4',
+      title: "Our Smart Solutions",
       buttonAction: () => alert("Get Started clicked!")
     },
     {
-      videoUrl: './videos/videoTwo.mp4',
-      title: "Engineered Solutions for demanding and critical applications",
+      videoUrl: './videos/smart-city.mp4',
+      title: "Explore our Micro Fin-Tech System for financial inclusion",
       buttonAction: () => alert("Learn More clicked!")
     },
 
     {
-      videoUrl: './videos/videoOne.mp4',
-      title: "Robust Supply Chain Management Provider",
+      videoUrl: './videos/hightech-4k.mp4',
+      title: "Visit Our Business Technology",
       buttonAction: () => alert("Explore More clicked!")
     }
   ];
@@ -110,7 +110,7 @@ const VideoCarousel: React.FC = () => {
             </div>
 
             {/* Overlay Content */}
-            <div className="absolute h-400px inset-0 bg-black/40 flex items-end justify-center">
+            <div className="absolute h-400px inset-0 bg-black/55 flex items-end justify-center">
               <div className="w-6xl text-white mb-7 px-6">
                 <div className="mb-16 md:mb-0">
                 {slide.title && (
