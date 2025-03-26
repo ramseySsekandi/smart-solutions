@@ -11,14 +11,13 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
             <Link href="/" className='hover:text-orange-400'>Home</Link>
-            <Link href="/technology" className='hover:text-orange-400'>Technology </Link>
-            <Link href="/consultancy" className='hover:text-orange-400'>Consultancy</Link>
-            <Link href="/" className='hover:text-orange-400'>Real Estate</Link>
-            <Link href="/" className='hover:text-orange-400'>Event Management</Link>
+            <Link href="/services" className='hover:text-orange-400'>Services</Link>
+            <Link href="/" className='hover:text-orange-400'>Our Location</Link>
+            <Link href="/" className='hover:text-orange-400'>Inquiries & Quotation</Link>
             <p className='text-blue-500'>Insights</p>
-            <Link href="/" className='hover:text-orange-400'>Transport & Logistics</Link>
-            <Link href="/" className='hover:text-orange-400'>Media</Link>
-            <Link href="/" className='hover:text-orange-400'>Tours & Travel</Link>
+            <Link href="/" className='hover:text-orange-400'>About Us</Link>
+            <Link href="/" className='hover:text-orange-400'>Contact Us</Link>
+            <Link href="/" className='hover:text-orange-400'>Feedback</Link>
             </div>
         </div>
         <div className="space-y-8">

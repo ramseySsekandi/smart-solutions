@@ -67,6 +67,7 @@ const Navbar = () => {
                 >
                   {child.name}
                 </Link>
+                
               ))}
             </div>
           )}
