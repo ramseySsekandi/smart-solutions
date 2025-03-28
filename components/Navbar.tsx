@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Cpu } from "lucide-react";
 
 export default function SiteHeader() {
   const navigation = [
@@ -63,7 +63,17 @@ export default function SiteHeader() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Car Care Gate</span>
-            <img alt="" src="./logo.png" className="h-12 w-auto" />
+            {/* <img alt="" src="./logo.png" className="h-12 w-auto" /> */}
+    <div className="flex items-center gap-4">
+    <Cpu
+        className="text-blue-400 bg-blue-900/30 p-2 rounded-lg" 
+        size={48} 
+      />
+      <h1 className="text-2xl font-bold text-blue-300">
+        Smart Solutions
+      </h1>
+    </div>
+    
           </Link>
         </div>
         <div className="flex lg:hidden">

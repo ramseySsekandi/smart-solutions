@@ -1,3 +1,4 @@
+import { Cpu } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,7 +8,16 @@ const Footer = () => {
         <div className="space-y-8">
             {/* Logo */}
             <div className="">
-            <img src="/pe-logo-white.png" className='w-50' alt="A logo pg energy" />
+            {/* <img src="/pe-logo-white.png" className='w-50' alt="A logo pg energy" /> */}
+            <div className="flex items-center gap-4">
+            <Cpu
+        className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg" 
+        size={48} 
+      />
+      <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+        Smart Solutions
+      </h1>
+    </div>
             </div>
             <div className="flex flex-col gap-2">
             <Link href="/" className='hover:text-orange-400'>Home</Link>
