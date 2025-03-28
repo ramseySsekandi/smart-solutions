@@ -13,7 +13,7 @@ export default function SiteHeader() {
       href: "/services",
       children: [
         { name: "Tech/IT Services", href: "/services" },
-        { name: "Event Management", href: "/" },
+        { name: "Event Management", href: "/services" },
         { name: "Property Management", href: "/services" },
         { name: "Charity Foundation", href: "/services" },
       ],
