@@ -32,8 +32,10 @@ const page = () => {
               >
                 <option>Select Service Type</option>
                 <option>Consulting</option>
-                <option>Development</option>
-                <option>Design</option>
+                <option>IT/Technology</option>
+                <option>Event Management</option>
+                <option>Property Management</option>
+                <option>Charity Foundation</option>
               </select>
               
               <input 

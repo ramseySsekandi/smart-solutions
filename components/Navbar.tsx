@@ -64,12 +64,12 @@ export default function SiteHeader() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Car Care Gate</span>
             {/* <img alt="" src="./logo.png" className="h-12 w-auto" /> */}
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2 lg:gap-4">
     <Cpu
         className="text-blue-400 bg-blue-900/30 p-2 rounded-lg" 
         size={48} 
       />
-      <h1 className="text-2xl font-bold text-blue-300">
+      <h1 className="text-xl lg:text-2xl font-bold text-blue-300">
         Smart Solutions
       </h1>
     </div>
