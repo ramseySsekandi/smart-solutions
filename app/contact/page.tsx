@@ -14,7 +14,7 @@ const page = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
+            <div className="space-y-6 mx-auto">
               <div className="flex items-center bg-[#122540] p-4 rounded-xl">
                 <Mail className="mr-4 text-pink-400" size={36} />
                 <div>
@@ -23,7 +23,7 @@ const page = () => {
                 </div>
               </div>
               
-              <div className="flex items-center bg-[#122540] p-4 rounded-xl">
+              <div className="flex items-center mx-auto bg-[#122540] p-4 rounded-xl">
                 <User className="mr-4 text-purple-400" size={36} />
                 <div>
                   <h3 className="font-semibold">Customer Support</h3>
