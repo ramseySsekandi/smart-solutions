@@ -1,34 +1,26 @@
 import { Cpu } from 'lucide-react'
-import Link from 'next/link'
 import React from 'react'
+import BackToTop from './BackToTop'
 
 const Footer = () => {
   return (
     <section className="bg-[#252525] text-white py-10 px-6 lg:grid lg:grid-cols-3 lg:px-20 gap-10 space-y-8 text-sm">
-        <div className="space-y-8">
+        <div className="space-y-8 flex flex-col justify-between">
             {/* Logo */}
-            <div className="">
             {/* <img src="/pe-logo-white.png" className='w-50' alt="A logo pg energy" /> */}
-            <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <Cpu
-        className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg" 
-        size={48} 
-      />
-      <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-        Smart Solutions
-      </h1>
-    </div>
-            </div>
-            <div className="flex flex-col gap-2">
-            <Link href="/" className='hover:text-orange-400'>Home</Link>
-            <Link href="/services" className='hover:text-orange-400'>Services</Link>
-            <Link href="/" className='hover:text-orange-400'>Our Location</Link>
-            <Link href="/" className='hover:text-orange-400'>Inquiries & Quotation</Link>
-            <p className='text-blue-500'>Insights</p>
-            <Link href="/" className='hover:text-orange-400'>About Us</Link>
-            <Link href="/" className='hover:text-orange-400'>Contact Us</Link>
-            <Link href="/" className='hover:text-orange-400'>Feedback</Link>
-            </div>
+              className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg" 
+              size={48} 
+            />
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+              Smart Solutions
+            </h1>
+          </div>
+
+          <div className="">
+            <BackToTop />
+          </div>
         </div>
         <div className="space-y-8">
             {/* Footer Locations Nigeria */}
