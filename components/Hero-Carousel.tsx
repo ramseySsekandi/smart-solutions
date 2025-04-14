@@ -35,6 +35,31 @@ const items = [
       description: "Expert guidance for business success. Our consultancy services provide strategic advice and support for businesses and organizations.",
      image: "https://media.istockphoto.com/id/1502896527/photo/office-meeting-and-documents-of-business-people-clients-or-team-for-taxes-audit-or-revenue.webp?a=1&b=1&s=612x612&w=0&k=20&c=k4-TacdiVfmnFcjt_Y3Y7YKnOqXV4WY0sdwV8bjokIE="
     },
+    {
+      title: "Real Estate",
+      description: "Premier properties and services. Our real estate services provide expert guidance and support for buying, selling, and managing properties",
+     image: "https://media.istockphoto.com/id/1488438637/photo/row-of-homes.jpg?s=612x612&w=0&k=20&c=kVsYFuVKHD8FOb9jxPgC134M8Q8yJ61cmsSRtqJPkIM="
+    },
+    {
+      title: "Tours & Travel",
+      description: "Explore the world with us. Our tours and travel services provide unforgettable experiences and adventures.",
+     image: "https://media.istockphoto.com/id/1992243286/photo/two-young-female-friends-embracing-on-the-street-in-dubrovnik.jpg?s=612x612&w=0&k=20&c=I-6jkpo7nTuEUHvOcdPTHdBNxl1A58r4NBZaP0CHcBA="
+    },
+    {
+      title: "Transport & Logistics",
+      description: "Efficient and reliable transport and logistics services. Our transport and logistics services provide comprehensive support for businesses and organizations.",
+     image: "https://media.istockphoto.com/id/2157040201/photo/truck-carrying-forty-foot-container-leaving-port-terminal-with-ship-and-quay-crane-on-the.jpg?s=612x612&w=0&k=20&c=D4UJJ09jrr-lkrP_6FvIAj6-2PosXIzg-iQ_HcxD0iQ="
+    },
+    {
+      title: "Publishing",
+      description: "Quality content and publishing services. Our publishing services provide expert guidance and support for authors and publishers.",
+     image: "https://media.istockphoto.com/id/1407890983/vector/newspaper-realistic-vector-illustration-background-of-the-page-headline-and-cover-of-old.jpg?s=612x612&w=0&k=20&c=uyB-_t4SbgkZxpc2CPk8_ELgNcnHTuUBPenHTIiRZIc="
+    },
+    {
+      title: "Media Comm & Entertainment",
+      description: "Engaging media and entertainment services. Our media communication and entertainment services provide expert guidance and support for businesses and organizations.",
+     image: "https://media.istockphoto.com/id/1300532725/photo/professional-cameraman-covering-on-event-with-a-video-cameraman-silhouette-on-live-studio.jpg?s=612x612&w=0&k=20&c=4Q3OJQE7qXrWiA7A8B8u2Bba1w5Dum8Q7ABlTl8_Pbw="
+    },
   ];
 
 export default function HeroCarousel() {
@@ -79,7 +104,7 @@ export default function HeroCarousel() {
               key={i}
               className="pl-2 md:pl-3 sm:basis-1/1 md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="border rounded-xs overflow-hidden pt-0">
+              <Card className="border rounded-xs overflow-hidden pt-0 h-full">
                 <CardContent className="px-0 pt-0">
                   <div className="relative mb-4">
                     <img
@@ -102,13 +127,13 @@ export default function HeroCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:block left-0 -translate-x-1/2" />
-        <CarouselNext className="right-0 hidden md:block translate-x-1/2" />
+        <CarouselPrevious className="left-0 -translate-x-1/2" />
+        <CarouselNext className="right-0 translate-x-1/2" />
       </Carousel>
 
       {/* Navigation Dots */}
       <div className="flex justify-center gap-2 mt-4">
-        {Array.from({ length: count }).map((_, index) => (
+        {items.map((_, index) => (
           <button
             key={index}
             className={`w-2 h-2 rounded-full transition-all ${
