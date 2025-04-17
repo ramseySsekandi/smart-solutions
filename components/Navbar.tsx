@@ -89,7 +89,7 @@ export default function SiteHeader() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-8 w-9 text-gray-400" />
+            <Bars3Icon aria-hidden="true" className="h-8 w-9 text-gray-300" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-6">
@@ -139,7 +139,6 @@ export default function SiteHeader() {
       >
         <div className="fixed flex items-center z-50 inset-0 " />
         <DialogPanel className="fixed mx-auto inset-0 top-[75px] right-0 shadow-lg left-0 z-50 w-11/12 overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10 h-max">
-          <div className="flex items-center justify-between"></div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-5 py-6">
