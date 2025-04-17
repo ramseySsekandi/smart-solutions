@@ -39,10 +39,36 @@ export default function SimpleSlider() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
-    <div className="slider-container mx-auto max-w-4xl p-4">
+    <div className="slider-container mx-auto max-w-4xl p-4 overflow-hidden">
       <h1 className='text-center text-4xl mb-8 font-bold text-[#444444]'>Our Market <span className='text-green-600'>Focus</span></h1>
       <Slider {...settings}>
       {items.map((item, i) => (
