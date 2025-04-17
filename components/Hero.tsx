@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className='w-full mt-5'>
         {/* Heading Hero */}
-        <h1 className='text-center text-4xl font-bold text-green-600'>Our <span className='text-[#444444]'>Capabilities</span> and <span className='text-[#444444]'> Services</span></h1>
+        <h1 className='text-center text-3xl md:text-4xlfont-bold text-green-600'>Our <span className='text-[#444444]'>Capabilities</span> and <span className='text-[#444444]'> Services</span></h1>
         {/* Carousel Hero */}
         
         {/* <HeroCarousel /> */}
@@ -93,7 +93,7 @@ const Hero = () => {
         
         {/* Hero Partners */}
         <article className='w-full py-5 flex flex-col items-center justify-center space-y-8'>
-          <h1 className='text-center text-4xl font-bold text-[#444444]'>Our <span className='text-green-600'>Key</span> Customers</h1>
+          <h1 className='text-center text-3xl md:text-4xl font-bold text-[#444444]'>Our <span className='text-green-600'>Key</span> Customers</h1>
           <div className="grid grid-cols-3 grid-flow-dense lg:grid-flow-row lg:grid-cols-5 gap-4 w-full max-w-4xl p-6 rounded-lg">
             <img src="/shell.jpg" alt="partner1" className='lg:w-12 lg:h-10' />
             <img src="/daewoo.jpg" alt="partner2" className='lg:w-12 lg:h-10' />

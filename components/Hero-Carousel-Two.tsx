@@ -69,7 +69,7 @@ export default function SimpleSlider() {
   };
   return (
     <div className="slider-container mx-auto max-w-4xl p-4 overflow-hidden">
-      <h1 className='text-center text-4xl mb-8 font-bold text-[#444444]'>Our Market <span className='text-green-600'>Focus</span></h1>
+      <h1 className='text-center text-3xl md:text-4xl mb-8 font-bold text-[#444444]'>Our Market <span className='text-green-600'>Focus</span></h1>
       <Slider {...settings}>
       {items.map((item, i) => (
        <div className="pl-2 md:pl-3 sm:basis-1/1 md:basis-1/2 lg:basis-1/3">
