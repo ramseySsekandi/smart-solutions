@@ -98,7 +98,7 @@ export default function SiteHeader() {
               {item.children ? (
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="text-sm font-bold leading-6 text-white hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                  className="text-sm font-bold leading-6 text-gray-200 hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -107,13 +107,13 @@ export default function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={handleLinkClick} // Close dropdown on link click
-                  className="text-sm font-bold leading-6 text-white hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                  className="text-sm font-bold leading-6 text-gray-200 hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                 >
                   {item.name}
                 </Link>
               )}
               {item.children && openDropdown === item.name && (
-                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50"
+                <div className="absolute left-0 mt-2 w-48 bg-gray-300 shadow-lg rounded-md z-50"
                 ref={mobileDropdownRef}
                 >
                   {item.children.map((child) => (
@@ -164,7 +164,7 @@ export default function SiteHeader() {
                     )}
                     {item.children && openDropdown === item.name && (
                       <div
-                        className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50"
+                        className="absolute left-0 mt-2 w-48 bg-gray-200 shadow-lg rounded-md z-50"
                         ref={mobileDropdownRef}
                       >
                         {item.children.map((child) => (

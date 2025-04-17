@@ -111,7 +111,7 @@ const VideoCarousel: React.FC = () => {
 
             {/* Overlay Content */}
             <div className="absolute h-400px inset-0 bg-black/55 flex items-end justify-center">
-              <div className="w-6xl text-white mb-7 px-6">
+              <div className="w-6xl text-gray-200 mb-7 px-6">
                 <div className="mb-16 md:mb-0">
                 {slide.title && (
                   <h2 className="font-bold mb-2 md:mb-4 drop-shadow-lg text-3xl md:text-5xl">

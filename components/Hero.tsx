@@ -15,8 +15,8 @@ const Hero = () => {
         {/* <HeroCarousel /> */}
         <SampleCarousel />
         {/* Core values Hero */}
-        <div className="bg-green-700 text-white text-center py-10 px-6 space-y-10 lg:flex space-x-4 gap-8 lg:justify-between lg:px-20">
-         <div className="space-y-8 space-x-4 lg:w-1/2 mx-auto flex flex-col items-center justify-center">
+        <div className="bg-green-700 text-gray-300 text-center grid grid-cols-1 md:grid-cols-2 lg:py-20 py-10 px-6 space-y-10 gap-8 items-stretch">
+         <div className="space-y-8 p-3 border-2 border-gray-300 h-full rounded-xl space-x-4 mx-auto flex flex-col items-center justify-center">
          <div className="flex justify-center text-center items-center gap-4 ">
           <h2 className='text-2xl font-bold'>Our Vision</h2>
           <Target size={48} />
@@ -24,7 +24,7 @@ const Hero = () => {
           <p className='text-center px-4'>Our vision is to be a leading global provider of innovative solutions,
              services, and support, empowering individuals, businesses, and communities to thrive and succeed.</p>
          </div>
-         <div className="space-y-8 space-x-4 lg:w-1/2 mx-auto flex flex-col items-center justify-center">
+         <div className="space-y-8 p-3 border-2 rounded-xl border-gray-300 space-x-4 mx-auto flex flex-col items-center justify-center">
          <div className="flex justify-center items-center gap-4 text-center">
           <h2 className='text-2xl font-bold'>Our Mission</h2>
           <Target size={48} />
@@ -37,7 +37,7 @@ const Hero = () => {
          </div>
         </div>
         {/* Credibility */}
-        <article className='bg-gray-800 text-white text-center space-y-8 px-6 h-full py-5 gap-12 lg:gap-16 lg:flex lg:justify-center'>
+        <article className='bg-gray-800 text-gray-300 text-center space-y-8 px-6 h-full py-5 gap-12 lg:gap-16 lg:flex lg:justify-center'>
          <div className="space-y-8">
          <h1 className='text-2xl font-bold'>
           Why us? Our <span className='text-green-300'>Strengths.</span>

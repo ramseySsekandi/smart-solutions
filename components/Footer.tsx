@@ -4,16 +4,16 @@ import BackToTop from './BackToTop'
 
 const Footer = () => {
   return (
-    <section className="bg-[#252525] text-white py-10 px-6 lg:grid lg:grid-cols-3 lg:px-20 gap-10 space-y-8 text-sm">
+    <section className="bg-gray-800 text-white py-10 px-6 lg:grid lg:grid-cols-3 lg:px-20 gap-10 space-y-8 text-sm">
         <div className="space-y-8 flex flex-col justify-between">
             {/* Logo */}
             {/* <img src="/pe-logo-white.png" className='w-50' alt="A logo pg energy" /> */}
           <div className="flex items-center gap-4">
             <Cpu
-              className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg" 
+              className="text-white bg-gradient-to-r from-green-300 to-green-600 p-2 rounded-lg" 
               size={48} 
             />
-            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-300">
               Smart Solutions
             </h1>
           </div>
@@ -26,14 +26,14 @@ const Footer = () => {
             {/* Footer Locations Nigeria */}
             <article className='space-y-2'>
             <h2 className='text-lg font-bold'>Smart Solutions Limited</h2>
-            <p className='text-orange-400'>Port Harcourt, Nigeria</p>
+            <p className='text-green-300'>Port Harcourt, Nigeria</p>
             <p >Centre of Excellence: Plot 94 Rivoc Road, Trans Amadi Industrial Layout, Port Harcourt, Rivers State.
                 No 54 Emekuku Street, D-Line, Port Harcourt, Rivers State, Nigeria.
                 Tel: +234 702 600 0116
             </p>
             </article>
             <article className='space-y-2'>
-            <p className='text-orange-400'>Abuja, Nigeria</p>
+            <p className='text-green-300'>Abuja, Nigeria</p>
             <p >No. 5 Vattern Street, off Amazon Street, Maitama, Abuja, FCT, Nigeria
             Tel: + 234 702 600 0119</p>
             </article>
@@ -49,13 +49,13 @@ const Footer = () => {
         </div>
         <div className="space-y-8">
         <article className='space-y-2'>
-            <p className='text-orange-400'>Kampala, Uganda</p>
+            <p className='text-green-300'>Kampala, Uganda</p>
             <p >Kampala, Uganda
 C/O Cristal Advocates, 4th Floor, Padre Pio House,
 Plot 32 Lumumba Avenue, Kampala, Uganda. P.O Box 1769</p>
             </article>
             <article className='space-y-2'>
-            <p className='text-orange-400'>
+            <p className='text-green-300'>
             Dubai, U.A.E</p>
             <p >Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E</p>
             <p >Email: info@pe-ng.com</p>
