@@ -71,14 +71,13 @@ export default function SiteHeader() {
             <Bars3Icon aria-hidden="true" className="h-8 w-9 text-gray-400" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-6"
-         >
+        <div className="hidden lg:flex lg:gap-x-6">
           {navigation.map((item) => (
             <div key={item.name} className="relative">
               {item.children ? (
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                  className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -86,7 +85,7 @@ export default function SiteHeader() {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                  className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                 >
                   {item.name}
                 </Link>
@@ -115,9 +114,7 @@ export default function SiteHeader() {
       >
         <div className="fixed flex items-center z-50 inset-0 " />
         <DialogPanel className="fixed mx-auto inset-0 top-[75px] right-0 shadow-lg left-0 z-50 w-11/12 overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-           
-          </div>
+          <div className="flex items-center justify-between"></div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-5 py-6">
@@ -126,7 +123,7 @@ export default function SiteHeader() {
                     {item.children ? (
                       <button
                         onClick={() => toggleDropdown(item.name)}
-                        className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
                       >
                         {item.name}
                         <ChevronDown size={16} />
@@ -134,15 +131,15 @@ export default function SiteHeader() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                       >
                         {item.name}
                       </Link>
                     )}
                     {item.children && openDropdown === item.name && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50"
-                      
-        ref={mobileDropdownRef}
+                      <div
+                        className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50"
+                        ref={mobileDropdownRef}
                       >
                         {item.children.map((child) => (
                           <Link

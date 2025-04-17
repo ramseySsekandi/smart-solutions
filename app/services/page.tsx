@@ -1,4 +1,3 @@
-
 import AboutCarousel from '@/components/About-Carousel'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
@@ -16,7 +15,7 @@ const page = () => {
   return (
     <div className="relative">
       <SecondaryCarousel id = 'whoWeAre' img = "https://image.shutterstock.com/image-photo/collage-visual-various-business-scenes-260nw-2458252435.jpg" alt = 'Cyber Technology: ' title = 'Our Services'/>
-      <section className='mt-[250px]  bg-gray-100 text-[#444444]'>
+      <section className='mt-[250px] bg-gray-100 text-gray-900'>
       {/* Hero One */}
       <div className="text-center max-w-5xl mx-auto py-12 px-6 space-y-4">
         <h2 className='text-lg font-bold'>Innovative solutions for a digital world. Our technology services provide cutting-edge solutions for businesses and individuals</h2>
@@ -24,7 +23,7 @@ const page = () => {
       </div>
       </section>
       <section className='text-[#444444] max-w-5xl px-4 mx-auto py-8 lg:flex lg:flex-col lg:items-center lg:px-5 space-y-4 lg:space-y-12' id="ourPrinciples">
-      <h1 className='text-4xl text-center font-bold'>Our Bow Tie<span className='text-[#0085CA]'> Principles.</span>
+      <h1 className='text-4xl text-center font-bold'>Our Bow Tie<span className='text-green-600'> Principles.</span>
           </h1>
           <div className='mx-auto w-full h-40 md:h-48 lg:h-60 lg:w-2/3 relative'>
           <Image src="https://plus.unsplash.com/premium_photo-1733259750830-4cc0bd8d3979?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGVjaG5vbG9neSUyMCUyRiUyMGl0JTIwc29sdXRpb25zJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww" alt='bow-tie' className='object-center w-full' fill/>
@@ -46,7 +45,7 @@ const page = () => {
       {/* Hero Two */}
       {/* Our Leadership */}
       <section className='text-[#444444] max-w-5xl px-4 mx-auto py-8 lg:flex lg:flex-col lg:items-center lg:px-5 space-y-4 lg:space-y-12' id="ourLeadership">
-      <h1 className='text-4xl text-center font-bold'>Our<span className='text-[#0085CA]'> Leadership.</span></h1>
+      <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Leadership.</span></h1>
       <div className="py-4 w-full">
         <h2 className='text-3xl font-bold'>Board</h2>
         <div className="grid grid-cols-1 md:grid-cols-3  gap-4 mx-auto px-4 py-8">
@@ -86,13 +85,13 @@ const page = () => {
       </div>
       {/* Our History */}
        <section id='ourHistory'>
-       <h1 className='text-4xl text-center font-bold'>Our<span className='text-[#0085CA] mb-5'> History.</span></h1>
+       <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> History.</span></h1>
        <AboutCarousel />
        </section>
        {/* Our Policies */}
        <section id='ourPolicies'>
         </section>
-        <h1 className='text-4xl text-center font-bold'>Our<span className='text-[#0085CA] mb-5'> Policies.</span></h1>
+        <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Policies.</span></h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:w-full gap-4 mx-auto px-4 py-8">
         {policiesLink.map((link, index) => (
             <div className="relative w-full h-80" key={index}>

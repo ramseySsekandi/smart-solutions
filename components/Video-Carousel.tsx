@@ -146,7 +146,7 @@ const VideoCarousel: React.FC = () => {
                         w-7 h-[2px]
                         md:w-10 md:h-1 cursor-pointer transition-all duration-300
                         ${currentSlide === index 
-                          ? 'bg-white' 
+                          ? 'bg-green-300' 
                           : 'bg-white/50 hover:bg-white/75'}
                       `}
                     />

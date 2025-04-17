@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import FooterTwo from "@/components/Footer-Two";
 import SiteHeader from "@/components/Navbar";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

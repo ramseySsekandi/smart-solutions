@@ -1,8 +1,5 @@
 @import "tailwindcss";
-
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
+@tailwind utilities;
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -123,11 +120,58 @@ html {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+/* Added Tailwind's @layer directives for better integration */
+
+
+@layer components {
+  .carousel {
+    @apply relative overflow-hidden;
   }
-  body {
-    @apply bg-background text-foreground;
+  .carousel-item {
+    @apply flex-shrink-0 w-full;
   }
+  .carousel-arrow {
+    @apply absolute top-1/2 transform -translate-y-1/2 bg-[var(--primary)] text-[var(--primary-foreground)];
+  }
+}
+
+@layer utilities {
+  .slick-slider {
+    @apply block;
+  }
+  .slick-list {
+    @apply relative overflow-hidden;
+  }
+  .slick-track {
+    @apply flex;
+  }
+  .slick-slide {
+    @apply hidden;
+  }
+  .slick-slide.slick-active {
+    @apply block;
+  }
+}
+/* make arrows always visible & pick your color */
+.slick-prev:before,
+.slick-next:before {
+  color: #333 !important;      /* arrow color */
+  opacity: 1    !important;     /* override any hide-on-idle */
+  font-size: 24px;             /* adjust arrow size */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;                  /* keep arrows on top of slides */
+}
+
+/* dots: default state */
+.slick-dots li button:before {
+  color: #bbb !important;      /* dot color */
+  font-size: 12px;
+}
+
+/* active dot */
+.slick-dots li.slick-active button:before {
+  color: #10b981 !important;   /* active dot color (e.g. Tailwind green‑500) */
 }

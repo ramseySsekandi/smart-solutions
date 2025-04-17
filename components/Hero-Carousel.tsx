@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-
+import useEmblaCarousel from 'embla-carousel-react'
 import { Star } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";

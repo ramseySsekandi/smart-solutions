@@ -72,10 +72,10 @@ export default function SiteHeader() {
             {/* <img alt="" src="./logo.png" className="h-12 w-auto" /> */}
     <div className="flex items-center gap-2 lg:gap-4">
     <Cpu
-        className="text-blue-400 bg-blue-900/30 p-2 rounded-lg" 
+        className="text-green-500 bg-green-900/30 p-2 rounded-lg" 
         size={48} 
       />
-      <h1 className="text-xl lg:text-2xl font-bold text-blue-300">
+      <h1 className="text-xl lg:text-2xl font-bold text-green-300">
         Smart Solutions
       </h1>
     </div>
@@ -98,7 +98,7 @@ export default function SiteHeader() {
               {item.children ? (
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                  className="text-sm font-bold leading-6 text-white hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
                 >
                   {item.name}
                   <ChevronDown size={16} />
@@ -107,7 +107,7 @@ export default function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={handleLinkClick} // Close dropdown on link click
-                  className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                  className="text-sm font-bold leading-6 text-white hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                 >
                   {item.name}
                 </Link>
@@ -121,7 +121,7 @@ export default function SiteHeader() {
                       key={child.name}
                       href={child.href}
                       onClick={handleLinkClick} // Close dropdown on link click
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100"
                     >
                       {child.name}
                     </Link>
@@ -148,7 +148,7 @@ export default function SiteHeader() {
                     {item.children ? (
                       <button
                         onClick={() => toggleDropdown(item.name)}
-                        className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
                       >
                         {item.name}
                         <ChevronDown size={16} />
@@ -157,7 +157,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         onClick={handleLinkClick} // Close mobile menu on link click
-                        className="text-sm font-bold leading-6 text-gray-900 lg:text-white hover:text-blue-400 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                       >
                         {item.name}
                       </Link>
@@ -172,7 +172,7 @@ export default function SiteHeader() {
                             key={child.name}
                             href={child.href}
                             onClick={handleLinkClick} // Close mobile menu on link click
-                            className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-400"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:text-green-300"
                           >
                             {child.name}
                           </Link>
