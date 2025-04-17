@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className='w-full mt-5'>
         {/* Heading Hero */}
-        <h1 className='text-center text-3xl md:text-4xlfont-bold text-green-600'>Our <span className='text-[#444444]'>Capabilities</span> and <span className='text-[#444444]'> Services</span></h1>
+        <h1 className='text-center text-3xl md:text-4xl font-bold text-green-600'>Our <span className='text-[#444444]'>Capabilities</span> and <span className='text-[#444444]'> Services</span></h1>
         {/* Carousel Hero */}
         
         {/* <HeroCarousel /> */}
