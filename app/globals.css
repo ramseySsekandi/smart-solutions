@@ -152,26 +152,3 @@ html {
     @apply block;
   }
 }
-/* make arrows always visible & pick your color */
-.slick-prev:before,
-.slick-next:before {
-  color: #333 !important;      /* arrow color */
-  opacity: 1    !important;     /* override any hide-on-idle */
-  font-size: 24px;             /* adjust arrow size */
-}
-
-.slick-prev,
-.slick-next {
-  z-index: 1;                  /* keep arrows on top of slides */
-}
-
-/* dots: default state */
-.slick-dots li button:before {
-  color: #bbb !important;      /* dot color */
-  font-size: 12px;
-}
-
-/* active dot */
-.slick-dots li.slick-active button:before {
-  color: #10b981 !important;   /* active dot color (e.g. Tailwind green‑500) */
-}

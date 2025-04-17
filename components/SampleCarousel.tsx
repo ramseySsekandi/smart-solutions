@@ -139,7 +139,7 @@ export default function SampleCarousel() {
       </div>
       {/* New feature: Add a button to scroll to the next item */}
       <button
-        className="mt-4 py-2 px-4 bg-green-300 text-gray-700 rounded"
+        className="mt-4 hidden sm:block py-2 px-4 bg-green-300 text-gray-700 rounded"
         onClick={() => emblaApi?.scrollNext()}
         aria-label="Next slide"
       >
