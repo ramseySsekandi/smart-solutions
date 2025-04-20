@@ -4,8 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
-import { speed } from "jquery";
 
 const items = [
     {
@@ -59,6 +57,9 @@ const items = [
        image: "https://media.istockphoto.com/id/1300532725/photo/professional-cameraman-covering-on-event-with-a-video-cameraman-silhouette-on-live-studio.jpg?s=612x612&w=0&k=20&c=4Q3OJQE7qXrWiA7A8B8u2Bba1w5Dum8Q7ABlTl8_Pbw="
       },
     ];
+
+
+
 
 export default function SampleCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(

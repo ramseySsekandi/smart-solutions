@@ -1,7 +1,9 @@
+"use client";
 import AboutCarousel from '@/components/About-Carousel';
 import SecondaryCarousel from '@/components/Secondary-Carousel';
 import Image from 'next/image';
 import React from 'react'
+import Link from "next/link";
 
 const page = () => {
     const boardLink = ["/about/gmd.jpg",

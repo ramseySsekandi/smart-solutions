@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-
-
 const items = [
     {
       title: "2009",
@@ -78,7 +76,7 @@ export default function AboutCarousel() {
               key={i}
               className="pl-2 md:pl-3 sm:basis-1/1 md:basis-1/2 lg:basis-1/4"
             >
-              <Card className="border rounded-xs overflow-hidden pt-0 shadow-lg">
+              <Card className="h-full rounded-xs overflow-hidden pt-0 shadow-lg">
                 <CardContent className="px-0 pt-0">
                   <div className="relative mb-4">
                     <img
@@ -108,7 +106,7 @@ export default function AboutCarousel() {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-all ${
-              index + 1 === current ? "bg-blue-600 w-6" : "bg-gray-300"
+              index + 1 === current ? "bg-green-600 w-6" : "bg-green-300"
             }`}
             onClick={() => api?.scrollTo(index)}
             aria-label={`Go to slide ${index + 1}`}

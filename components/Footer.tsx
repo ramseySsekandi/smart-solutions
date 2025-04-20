@@ -1,6 +1,7 @@
 import { Cpu } from 'lucide-react'
 import React from 'react'
 import BackToTop from './BackToTop'
+import Link from "next/link";
 
 const Footer = () => {
   return (
