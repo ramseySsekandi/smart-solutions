@@ -1,33 +1,32 @@
 'use client'
+import { sendContactMail } from '@/app/actions/sendmail';
 import { IContactInputs } from '@/types/mail-forms';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const ContactForm = () => {
     
-     const { register, handleSubmit, formState: { errors } } = useForm<IContactInputs>();
+     const { register, handleSubmit, formState: { errors }, reset } = useForm<IContactInputs>();
       const [loading, setLoading] = useState(false);
     
       const onSubmit = async (data: IContactInputs) => {
-        console.log(data)
-        // try {
-        //   setLoading(true);
-        //   const response = await fetch('/api/sendEmail', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ ...data, to: 'moshehravens@gmail.com' }),
-        //   });
-    
-        //   if (response.ok) {
-        //     console.log('Message sent successfully!');
-        //   } else {
-        //     console.log('Failed to send message. Please try again later.');
-        //   }
-        // } catch (error) {
-        //   console.log('An error occurred. Please try again later.');
-        // } finally {
-        //   setLoading(false);
-        // }
+       try {
+        setLoading(true);
+        const response = await sendContactMail(data);
+        if (response?.success) {
+        toast.success('Submitted Successfully')
+        reset()
+        } else {
+        toast.error('Something Went Wrong')
+        }
+       } catch (error) {
+        console.log(error)
+       } finally{
+        setLoading(false)
+       }
+       
+       
       };
   return (
     <div className=''>
