@@ -1,39 +1,36 @@
 'use client'
-import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { IContactInputs } from '@/types/mail-forms';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 const ContactForm = () => {
-    interface FormInputs {
-        name: string;
-        email: string;
-        message: string;
-      }
-     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>();
+    
+     const { register, handleSubmit, formState: { errors } } = useForm<IContactInputs>();
       const [loading, setLoading] = useState(false);
     
-      const onSubmit = async (data: FormInputs) => {
-        
-        try {
-          setLoading(true);
-          const response = await fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...data, to: 'moshehravens@gmail.com' }),
-          });
+      const onSubmit = async (data: IContactInputs) => {
+        console.log(data)
+        // try {
+        //   setLoading(true);
+        //   const response = await fetch('/api/sendEmail', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ ...data, to: 'moshehravens@gmail.com' }),
+        //   });
     
-          if (response.ok) {
-            console.log('Message sent successfully!');
-          } else {
-            console.log('Failed to send message. Please try again later.');
-          }
-        } catch (error) {
-          console.log('An error occurred. Please try again later.');
-        } finally {
-          setLoading(false);
-        }
+        //   if (response.ok) {
+        //     console.log('Message sent successfully!');
+        //   } else {
+        //     console.log('Failed to send message. Please try again later.');
+        //   }
+        // } catch (error) {
+        //   console.log('An error occurred. Please try again later.');
+        // } finally {
+        //   setLoading(false);
+        // }
       };
   return (
-    <div className='flex items-center'>
+    <div className=''>
       {/* Add form elements here */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className=''>
