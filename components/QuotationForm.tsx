@@ -12,28 +12,27 @@ const QuotationForm = () => {
     const [formStatus, setFormStatus] = useState(false);
 
     const onSubmit: SubmitHandler<IQuotationInputs> = async (data) => {
-    //   try {
-    //     setFormStatus(true);
-    //     const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/mail`, {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/json' },
-    //       body: JSON.stringify(data),
-    //     });
+      try {
+        setFormStatus(true);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/mail/quotation`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
   
-    //     const res = await response.json();
-    //     if (res.success) {
-    //       toast.success('Quotation request sent successfully!');
-    //       reset();
-    //     } else {
-    //       toast.error('Failed to send quotation request. Please try again later.');
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //     toast.error('An error occurred. Please try again.');
-    //   } finally {
-    //     setFormStatus(false);
-    //   }
-    console.log(data);
+        const res = await response.json();
+        if (res.success) {
+          toast.success('Quotation request sent successfully!');
+          reset();
+        } else {
+          toast.error('Failed to send quotation request. Please try again later.');
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error('An error occurred. Please try again.');
+      } finally {
+        setFormStatus(false);
+      }
     };
 
   return (

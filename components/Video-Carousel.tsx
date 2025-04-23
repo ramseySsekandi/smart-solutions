@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface Slide {
   videoUrl: string;
@@ -118,8 +119,7 @@ const VideoCarousel: React.FC = () => {
                     {slide.title}
                   </h2>
                 )}
-                  <button 
-                    onClick={slide.buttonAction}
+                  <button
                     className="
                       bg-white text-black 
                       px-4 py-2.5
@@ -132,7 +132,7 @@ const VideoCarousel: React.FC = () => {
                       mt-6
                     "
                   >
-                    Learn More
+                    <Link href="/services">Learn More</Link>
                   </button>
                 </div>
 
