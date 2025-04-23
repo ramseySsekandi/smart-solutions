@@ -4,12 +4,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
-export default async function page({ params }: { params: { id: string } }) {
-  // Await the params to get the resolved value
-  const { id } = await params;
+export function generateStaticParams() {
+  return servicesData.map((service) => ({
+    id: service.id,
+  }));
+}
 
-  const service = servicesData.find((s) => s.id === id);
-  const otherServices = servicesData.filter((s) => s.id !== id).slice(0, 3);
+export default function Page({ params }: { params: { id: string } }) {
+  const service = servicesData.find((s) => s.id === params.id);
+  const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
 
   if (!service) {
     notFound();
