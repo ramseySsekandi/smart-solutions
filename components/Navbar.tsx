@@ -133,19 +133,19 @@ export default function SiteHeader() {
       <Dialog
         open={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        className="lg:hidden caret-lime-400 p-6"
+        className="lg:hidden relative"
       >
-        <div className="fixed flex items-center z-50 inset-0 " />
-        <DialogPanel className="fixed mx-auto inset-0 top-[75px] right-0 shadow-lg left-0 z-50 w-11/12 overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:ring-gray-900/10 h-max">
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-5 py-6">
+        <div className="fixed inset-0 bg-black/20 z-40" aria-hidden="true" />
+        <DialogPanel className="fixed inset-x-0 top-[75px] z-50 w-11/12 mx-auto bg-white shadow-lg rounded-lg sm:ring-1 sm:ring-gray-900/10 min-h-fit max-h-[calc(100vh-100px)]">
+          <div className="p-6">
+            <div className="divide-y divide-gray-500/10">
+              <div className="space-y-4">
                 {navigation.map((item) => (
                   <div key={item.name} className="relative">
                     {item.children ? (
                       <button
                         onClick={() => toggleDropdown(item.name)}
-                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center gap-1"
+                        className="w-full text-left text-sm font-bold leading-6 text-gray-900 hover:text-green-500 hover:underline transition-all duration-500 underline-offset-4 decoration-2 flex items-center justify-between"
                       >
                         {item.name}
                         <ChevronDown size={16} />
@@ -153,23 +153,22 @@ export default function SiteHeader() {
                     ) : (
                       <Link
                         href={item.href}
-                        onClick={handleLinkClick} // Close mobile menu on link click
-                        className="text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
+                        onClick={handleLinkClick}
+                        className="block w-full text-sm font-bold leading-6 text-gray-900 hover:text-green-600 hover:underline transition-all duration-500 underline-offset-4 decoration-2"
                       >
                         {item.name}
                       </Link>
                     )}
                     {item.children && openDropdown === item.name && (
                       <div
-                        className="absolute left-0 mt-2 w-48 bg-gray-200 shadow-lg rounded-md z-50"
-                        ref={mobileDropdownRef}
+                        className="mt-2 ml-4 space-y-2 border-l-2 border-gray-200 pl-4"
                       >
                         {item.children.map((child) => (
                           <Link
                             key={child.name}
                             href={child.href}
-                            onClick={handleLinkClick} // Close mobile menu on link click
-                            className="block px-4 py-2 text-sm text-gray-700 hover:text-green-300"
+                            onClick={handleLinkClick}
+                            className="block text-sm text-gray-700 hover:text-green-500 py-2"
                           >
                             {child.name}
                           </Link>
