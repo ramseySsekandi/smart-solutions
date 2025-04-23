@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
-type Props = {
+interface PageProps {
   params: {
     id: string;
   };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+}
 
 export function generateStaticParams() {
   return servicesData.map((service) => ({
@@ -17,7 +16,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params, searchParams }: Props) {
+export default function ServicePage({ params }: PageProps) {
   const service = servicesData.find((s) => s.id === params.id);
   const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
 
