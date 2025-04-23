@@ -4,12 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
-export function generateStaticParams() {
-  return servicesData.map((service) => ({
-    id: service.id,
-  }));
-}
-
 export default async function ServicePage({ params }: { params: { id: string } }) {
   // Await the params to get the resolved value
   const { id } = await params;
