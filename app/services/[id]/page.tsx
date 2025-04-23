@@ -4,13 +4,20 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
-export async function generateStaticParams() {
+type Props = {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export function generateStaticParams() {
   return servicesData.map((service) => ({
     id: service.id,
   }));
 }
 
-export default function ServicePage({ params }: { params: { id: string } }) {
+export default function ServicePage({ params, searchParams }: Props) {
   const service = servicesData.find((s) => s.id === params.id);
   const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
 
@@ -25,7 +32,6 @@ export default function ServicePage({ params }: { params: { id: string } }) {
         img={service.image}
         alt={service.title}
         title={service.title}
-        size="small"
       />
       
       <div className="container mx-auto px-4 py-12">
