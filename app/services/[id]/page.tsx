@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
-export default async function ServicePage({ params }: { params: { id: string } }) {
+export default async function page({ params }: { params: { id: string } }) {
   // Await the params to get the resolved value
   const { id } = await params;
 
