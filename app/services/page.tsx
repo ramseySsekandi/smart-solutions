@@ -1,10 +1,8 @@
-import AboutCarousel from '@/components/About-Carousel';
 import SecondaryCarousel from '@/components/Secondary-Carousel';
-import Image from 'next/image';
 import React from 'react';
 import Link from "next/link";
 
-const servicesData = [
+export const servicesData = [
   {
     id: "technology-it-services",
     title: "Technology/ IT Services",

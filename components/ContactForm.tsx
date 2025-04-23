@@ -37,7 +37,7 @@ const ContactForm = () => {
                   <input
                     id="name"
                     {...register('name', { required: 'Name is required' })}
-                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
                   />
                   {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                 </div>
@@ -48,7 +48,7 @@ const ContactForm = () => {
                     id="email"
                     type="email"
                     {...register('email', { required: 'Email is required' })}
-                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
                   />
                   {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                 </div>
@@ -58,13 +58,13 @@ const ContactForm = () => {
                   <textarea
                     id="message"
                     {...register('message', { required: 'Message is required' })}
-                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 h-40 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 h-40 focus:outline-none focus:ring-1 focus:ring-green-500"
                   ></textarea>
                   {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
                 </div>
 
-                <button type="submit" className="w-full bg-green-500 text-white py-4 rounded-xl hover:scale-[1.01] transition-all">
-                  {loading?'Sending Message' : 'Send Message'}
+                <button type="submit" disabled={loading} className="w-full bg-green-500 text-white py-4 rounded-xl hover:scale-[1.01] transition-all">
+                  {loading?'Sending Message...' : 'Send Message'}
                 </button>
               </form>
     </div>

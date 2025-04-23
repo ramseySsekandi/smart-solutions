@@ -1,7 +1,4 @@
-import React from 'react'
-import HeroCarousel from '@/components/Hero-Carousel'
 import { CircleCheckBig, Target } from 'lucide-react'
-import HeroCarouselTwo from './Hero-Carousel-Two'
 import SampleCarousel from './SampleCarousel'
 import SimpleSlider from './Hero-Carousel-Two'
 

@@ -1,39 +1,13 @@
-"use client";
+
+import FeedbackForm from '@/components/FeedbackForm'
 import SecondaryCarousel from '@/components/Secondary-Carousel'
 import { CheckCircle, MessageCircle, Star } from 'lucide-react'
-import React, { useState } from 'react'
-import Link from "next/link";
-import { useForm, SubmitHandler } from 'react-hook-form';
 
-interface FeedbackInputs {
-  name: string;
-  email: string;
-  feedback: string;
-}
 
-const FeedbackPage = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FeedbackInputs>();
-  const [formStatus, setFormStatus] = useState('');
 
-  const onSubmit: SubmitHandler<FeedbackInputs> = async (data) => {
-    setFormStatus('Sending...');
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, to: 'moshehravens@gmail.com' }),
-      });
+const page = () => {
 
-      if (response.ok) {
-        setFormStatus('Feedback sent successfully!');
-      } else {
-        setFormStatus('Failed to send feedback. Please try again later.');
-      }
-    } catch (error) {
-      setFormStatus('An error occurred. Please try again later.');
-    }
-  };
 
   return (
     <>
@@ -65,44 +39,9 @@ const FeedbackPage = () => {
             </div>
           </div>
           
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium">Name</label>
-              <input
-                id="name"
-                {...register('name', { required: 'Name is required' })}
-                className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-            </div>
+          <FeedbackForm />
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium">Email</label>
-              <input
-                id="email"
-                type="email"
-                {...register('email', { required: 'Email is required' })}
-                className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="feedback" className="block text-sm font-medium">Feedback</label>
-              <textarea
-                id="feedback"
-                {...register('feedback', { required: 'Feedback is required' })}
-                className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 h-40 focus:outline-none focus:ring-2 focus:ring-green-500"
-              ></textarea>
-              {errors.feedback && <p className="text-red-500 text-sm">{errors.feedback.message}</p>}
-            </div>
-
-            <button type="submit" className="w-full bg-green-500 text-white py-4 rounded-xl hover:scale-[1.01] transition-all">
-              Send Feedback
-            </button>
-          </form>
-
-          {formStatus && <p className="text-center mt-4 text-sm text-green-600">{formStatus}</p>}
+          
         </div>
       </section>
         </section>
@@ -110,4 +49,4 @@ const FeedbackPage = () => {
   )
 }
 
-export default FeedbackPage
+export default page
