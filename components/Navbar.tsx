@@ -7,6 +7,11 @@ import { ChevronDown, Cpu } from "lucide-react";
 import { servicesData } from "@/lib/utils";
 
 export default function SiteHeader() {
+  // Add console log to verify services data
+  useEffect(() => {
+    console.log('Services in Navbar:', servicesData);
+  }, []);
+
   const navigation = [
     { name: "Home", href: "/" },
     {

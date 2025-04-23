@@ -11,13 +11,13 @@ export function generateStaticParams() {
 }
 
 export default async function Page({
-    params,
-  }: {
-    params: Promise<{ slug: string }>
-  }) {
-    
-  const service = await servicesData.find(async (s) => s.id === (await params).slug);
-  const otherServices = await servicesData.filter(async (s) => s.id !== (await params).slug).slice(0, 3);
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const service = servicesData.find((s) => s.id === id);
+  const otherServices = servicesData.filter((s) => s.id !== id).slice(0, 3);
 
   if (!service) {
     notFound();
