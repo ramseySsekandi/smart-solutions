@@ -10,9 +10,14 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { id: string } }) {
-  const service = servicesData.find((s) => s.id === params.id);
-  const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
+export default async function Page({
+    params,
+  }: {
+    params: Promise<{ slug: string }>
+  }) {
+    
+  const service = await servicesData.find(async (s) => s.id === (await params).slug);
+  const otherServices = await servicesData.filter(async (s) => s.id !== (await params).slug).slice(0, 3);
 
   if (!service) {
     notFound();
