@@ -9,16 +9,6 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
 
 
-interface PageProps {
-
-  params: {
-
-    id: string;
-
-  };
-
-}
-
 
 export function generateStaticParams() {
 
@@ -31,7 +21,9 @@ export function generateStaticParams() {
 }
 
 
-export default function ServicePage({ params }: PageProps) {
+export default function ServicePage({ params }: {
+    params: Promise<{ id: string }>
+  }) {
 
   const service = servicesData.find((s) => s.id === params.id);
 
