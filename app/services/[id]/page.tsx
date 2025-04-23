@@ -77,7 +77,7 @@ export default function ServicePage({ params }: { params: { id: string } }) {
                     </div>
                     <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
                       <Zap className="w-6 h-6 text-green-600 mb-2" />
-                      <h3 className="font-semibold">Fast Delivery </h3>
+                      <h3 className ="font-semibold">Fast Delivery</h3>
                       <p className="text-sm text-gray-600 dark:text-gray-300">Quick Turnaround</p>
                     </div>
                   </div>
