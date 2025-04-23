@@ -4,6 +4,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { ChevronDown, Cpu } from "lucide-react";
+import { servicesData } from "@/lib/utils";
 
 export default function SiteHeader() {
   const navigation = [
@@ -11,18 +12,10 @@ export default function SiteHeader() {
     {
       name: "Services",
       href: "/services",
-      children: [
-        { name: "Tech/IT Services", href: "/services#technology-it-services" },
-        { name: "Event Management", href: "/services#event-management" },
-        { name: "Property Management", href: "/services#property-management" },
-        { name: "Charity Foundation", href: "/services#charity-foundation" },
-        { name: "Tours & Travel", href: "/services#tours-travel" },
-        { name: "Real Estate", href: "/services#real-estate" },
-        { name: "Consultancy", href: "/services#consultancy" },
-        { name: "Transport & Logistics", href: "/services#transport-logistics" },
-        { name: "Publishing", href: "/services#publishing" },
-        { name: "Media Comm & Entertainment", href: "/services#media-comm-entertainment" },
-      ],
+      children: servicesData.map(service => ({
+        name: service.title,
+        href: `/services/${service.id}`,
+      })),
     },
     { name: "Our Location", href: "/location" },
     { name: "About Us", href: "/about" },

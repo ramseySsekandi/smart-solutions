@@ -7,26 +7,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { servicesData } from "@/lib/utils";
 
-
-
-
 export default function SampleCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", speed: 5, skipSnaps: true, dragFree: true} as any,
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]// delay in ms
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
   const raf = useRef<number | null>(null);
 
   const animate = () => {
-    if (!emblaApi) return; // Ensure emblaApi is defined
+    if (!emblaApi) return;
     if (emblaApi.canScrollNext()) {
       emblaApi.scrollNext();
     } else {
       emblaApi.scrollTo(0);
     }
-    emblaApi.reInit(); // Reinitialize to eliminate shaky wave effect
-    raf.current = requestAnimationFrame(animate);
+    emblaApi.reInit();
   };
 
   const onSelect = useCallback(() => {
@@ -63,9 +59,12 @@ export default function SampleCarousel() {
                   </h3>
                   <div className="space-y-5 text-center px-4 text-gray-700">
                     <p className="line-clamp-4">{item.description}</p>
-                    <button className="py-2 px-4 rounded-xl text-green-600 border border-green-600 text-sm">
-                      <Link href={`/services#${item.id}`}>Read More</Link>
-                    </button>
+                    <Link 
+                      href={`/services/${item.id}`}
+                      className="inline-block py-2 px-4 rounded-xl text-green-600 border border-green-600 text-sm hover:bg-green-50 transition-colors"
+                    >
+                      Read More
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -74,7 +73,6 @@ export default function SampleCarousel() {
         </div>
       </div>
 
-      {/* Dots */}
       <div className="flex justify-center gap-2 mt-4">
         {servicesData.map((_, index) => (
           <button
@@ -87,14 +85,6 @@ export default function SampleCarousel() {
           />
         ))}
       </div>
-      {/* New feature: Add a button to scroll to the next item */}
-      <button
-        className="mt-4 hidden sm:block py-2 px-4 bg-green-300 text-gray-700 rounded"
-        onClick={() => emblaApi?.scrollNext()}
-        aria-label="Next slide"
-      >
-        Next
-      </button>
     </div>
   );
 }

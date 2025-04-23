@@ -6,7 +6,7 @@ interface MyComponentProps {
     id: string;
     alt: string;
     img:string;
-  }
+}
 
 const SecondaryCarousel = (props:MyComponentProps) => {
   return (
