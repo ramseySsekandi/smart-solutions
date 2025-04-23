@@ -39,33 +39,35 @@ const QuotationForm = () => {
     <section>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1">Full Name</label>
                 <input
                   id="name"
-                  {...register('name', { required: 'Name is required' })}
+                  placeholder="Enter your full name"
+                  {...register('name', { required: 'Full name is required' })}
                   className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1">Business Email</label>
                 <input
                   id="email"
                   type="email"
-                  {...register('email', { required: 'Email is required' })}
+                  placeholder="Enter your business email address"
+                  {...register('email', { required: 'Business email is required' })}
                   className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
+                <label htmlFor="phone" className="block text-sm font-medium mb-1">Contact Number</label>
                 <Controller
                   name="phone"
                   control={control}
                   rules={{
-                    required: 'Phone number is required',
+                    required: 'Contact number is required',
                     validate: (value) => value.length >= 10 || 'Please enter a valid phone number'
                   }}
                   render={({ field: { onChange, value } }) => (
@@ -85,13 +87,13 @@ const QuotationForm = () => {
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium">Service</label>
+                <label htmlFor="service" className="block text-sm font-medium mb-1">Service Required</label>
                 <select
                   id="service"
-                  {...register('service', { required: 'Service is required' })}
+                  {...register('service', { required: 'Please select a service' })}
                   className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
                 >
-                  <option value="">Select a Service</option>
+                  <option value="">Select the service you're interested in</option>
                   {servicesData.map((service) => (
                     <option key={service.id} value={service.title}>
                       {service.title}
@@ -102,10 +104,11 @@ const QuotationForm = () => {
               </div>
 
               <div>
-                <label htmlFor="description" className="block text-sm font-medium">Project Description</label>
+                <label htmlFor="description" className="block text-sm font-medium mb-1">Project Requirements</label>
                 <textarea
                   id="description"
-                  {...register('description', { required: 'Description is required' })}
+                  placeholder="Please describe your project requirements in detail..."
+                  {...register('description', { required: 'Project requirements are needed for accurate quotation' })}
                   className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 h-40 focus:outline-none focus:ring-1 focus:ring-green-500"
                 ></textarea>
                 {errors.description && <p className="text-red-500 text-sm">{errors.description.message}</p>}
@@ -116,7 +119,7 @@ const QuotationForm = () => {
                 disabled={formStatus}
                 className="w-full bg-green-500 text-white py-4 rounded-xl hover:scale-[1.01] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {formStatus ? 'Sending...' : 'Request Quotation'}
+                {formStatus ? 'Sending Request...' : 'Request Quotation'}
               </button>
             </form>
     </section>

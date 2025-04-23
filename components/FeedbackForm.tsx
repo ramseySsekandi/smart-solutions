@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { IFeedbackInputs } from '@/types/mail-forms';
 import toast from 'react-hot-toast';
 
-
 const FeedbackForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFeedbackInputs>();
     const [formStatus, setFormStatus] = useState(false);
@@ -39,41 +38,45 @@ const FeedbackForm = () => {
     <section>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium mb-1">Full Name</label>
               <input
                 id="name"
-                {...register('name', { required: 'Name is required' })}
+                placeholder="Enter your full name"
+                {...register('name', { required: 'Full name is required' })}
                 className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
               />
               {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium mb-1">Email Address</label>
               <input
                 id="email"
                 type="email"
-                {...register('email', { required: 'Email is required' })}
+                placeholder="Enter your email address"
+                {...register('email', { required: 'Email address is required' })}
                 className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-green-500"
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
 
             <div>
-              <label htmlFor="feedback" className="block text-sm font-medium">Feedback</label>
+              <label htmlFor="feedback" className="block text-sm font-medium mb-1">Your Feedback</label>
               <textarea
                 id="feedback"
-                {...register('feedback', { required: 'Feedback is required' })}
+                placeholder="Share your experience with our services..."
+                {...register('feedback', { required: 'Please provide your feedback' })}
                 className="w-full bg-gray-100 border-2 border-green-400 rounded-xl p-4 h-40 focus:outline-none focus:ring-1 focus:ring-green-500"
               ></textarea>
               {errors.feedback && <p className="text-red-500 text-sm">{errors.feedback.message}</p>}
             </div>
 
             <button type="submit" disabled={formStatus} className="w-full bg-green-500 text-white py-4 rounded-xl hover:scale-[1.01] transition-all">
-              {formStatus ? 'Sending...' : 'Send Feedback'}
+              {formStatus ? 'Sending...' : 'Submit Feedback'}
             </button>
-          </form>
+        </form>
     </section>
   )
 }
+
 export default FeedbackForm
