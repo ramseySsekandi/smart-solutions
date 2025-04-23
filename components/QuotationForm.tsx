@@ -1,9 +1,9 @@
 'use client';
+import { servicesData } from '@/lib/utils';
 import { IQuotationInputs } from '@/types/mail-forms';
 import { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { servicesData } from '@/app/services/page';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
