@@ -7,6 +7,7 @@ import SiteHeader from "@/components/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,18 +30,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
-      >
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-        />
-        <SiteHeader />
-        {children}
-        <Footer />
-        <FooterTwo />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Toaster position="top-center" reverseOrder={false} />
+          <SiteHeader />
+          {children}
+          <Footer />
+          <FooterTwo />
+        </ThemeProvider>
       </body>
     </html>
   );
