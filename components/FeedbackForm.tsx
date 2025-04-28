@@ -10,9 +10,9 @@ const FeedbackForm = () => {
     const [formStatus, setFormStatus] = useState(false);
 
     const onSubmit: SubmitHandler<IFeedbackInputs> = async (data) => {
-      console.log(data);
       const baseUrl = process.env.NEXT_PUBLIC_URL;
       try {
+        console.log(data);
         setFormStatus(true);
         // Send the data to the server
         const response = await fetch(`${baseUrl}/api/mail/feedback`, {
@@ -20,7 +20,7 @@ const FeedbackForm = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         });
-  
+        
         const res = await response.json();
         if (res.success) {
           toast.success('Feedback sent successfully!');

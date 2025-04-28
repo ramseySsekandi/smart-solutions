@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
 @tailwind utilities;
 
 @theme {
@@ -122,7 +124,6 @@ html {
 
 /* Added Tailwind's @layer directives for better integration */
 
-
 @layer components {
   .carousel {
     @apply relative overflow-hidden;
@@ -150,5 +151,14 @@ html {
   }
   .slick-slide.slick-active {
     @apply block;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
