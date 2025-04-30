@@ -1,5 +1,5 @@
 'use client'
-import { sendContactMail } from '@/app/actions/sendmail';
+import { sendContactMail } from '@/app/actions/send-mail';
 import { IContactInputs } from '@/types/mail-forms';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

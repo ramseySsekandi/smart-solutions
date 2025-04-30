@@ -1,4 +1,5 @@
 
+import { auth } from "@/auth"
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   Breadcrumb,
@@ -15,7 +16,9 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+  console.log(session)
   return (
     <SidebarProvider>
       <AppSidebar />

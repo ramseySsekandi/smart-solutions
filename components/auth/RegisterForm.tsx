@@ -21,9 +21,13 @@ import { useState } from "react";
 import { register } from "module";
 import { registerUser } from "@/app/actions/register";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import GoogleLogin from "./google-button";
 
 const RegisterForm = () => {
+
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const form = useForm({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -35,14 +39,16 @@ const RegisterForm = () => {
   });
   const onSubmit = (data: z.infer<typeof RegisterSchema>) => {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_URL
     setLoading(true);
-    console.log(data);
     registerUser(data)
       .then((res) => {
         if (res.error) {
           toast.error(res.error);
         } if (res.success) {
           toast.success(res.success);
+          router.push(`${baseUrl}/login`) 
+          // Redirect to login page after successful registration
         }
       })
       .catch((error) => {
@@ -59,7 +65,7 @@ const RegisterForm = () => {
     <CardWrapper
       label="Create an account"
       title="Register"
-      backButtonHref="/auth/login"
+      backButtonHref="/login"
       backButtonLabel="Already have an account? Login here."
     >
       <Form {...form}>
@@ -127,6 +133,7 @@ const RegisterForm = () => {
           </Button>
         </form>
       </Form>
+      <GoogleLogin />
     </CardWrapper>
     
   )

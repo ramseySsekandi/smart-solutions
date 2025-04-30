@@ -77,3 +77,5 @@ export const servicesData = [
     darkImage: "https://media.istockphoto.com/id/1300532725/photo/professional-cameraman-covering-on-event-with-a-video-cameraman-silhouette-on-live-studio.jpg?s=612x612&w=0&k=20&c=4Q3OJQE7qXrWiA7A8B8u2Bba1w5Dum8Q7ABlTl8_Pbw="
   }
 ];
+
+export const privateRoutes = ["/dashboard"]
