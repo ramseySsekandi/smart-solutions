@@ -41,14 +41,14 @@ export async function loginUser(data: { email: string; password: string }) {
         console.log(error)
         if(error instanceof AuthError) {
             
-            switch (error.type) {
+            switch (error.name) {
                 case "CredentialsSignin":
                     return {
                         error: "Invalid credentials",
                     };
                 default:
                     return {
-                        error: "Please Verify your email address",
+                        error: "Please verify your email address",
                     };
             }
         }
