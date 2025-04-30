@@ -37,11 +37,9 @@ export async function loginUser(data: { email: string; password: string }) {
             password,
             redirectTo: `${baseUrl}/dashboard`,
         });
-    } catch (error) {
-        console.log(error)
+    } catch (error) {      
         if(error instanceof AuthError) {
-            
-            switch (error.name) {
+            switch ((error as any).type) {
                 case "CredentialsSignin":
                     return {
                         error: "Invalid credentials",
