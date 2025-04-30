@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "preview": "next build && next start",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "build": "email build"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.9.0",
@@ -74,6 +75,7 @@
     "embla-carousel": "^8.6.0",
     "prisma": "^6.6.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "next": "*"
   }
 }
