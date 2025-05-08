@@ -16,13 +16,12 @@ import { useForm } from "react-hook-form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { z } from "zod";
-import { useFormStatus } from "react-dom";
 import { useState } from "react";
-import { register } from "module";
 import { registerUser } from "@/app/actions/register";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import GoogleLogin from "./google-button";
+import { Loader2 } from "lucide-react";
 
 const RegisterForm = () => {
 
@@ -37,30 +36,28 @@ const RegisterForm = () => {
       confirmPassword: "",
     },
   });
-  const onSubmit = (data: z.infer<typeof RegisterSchema>) => {
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_URL
+  const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
     setLoading(true);
-    registerUser(data)
-      .then((res) => {
-        if (res.error) {
-          toast.error(res.error);
-        } if (res.success) {
-          toast.success(res.success);
-          router.push(`${baseUrl}/login`) 
-          // Redirect to login page after successful registration
-        }
-      })
-      .catch((error) => {
-        console.error("Error during registration:", error);
-      });
-  } catch (error) {
-    
-  } finally{
-    setLoading(false);
-  }
+  
+    try {
+      const res = await registerUser(data);
+  
+      if (res.error) {
+        toast.error(res.error);
+      } else if (res.success) {
+        toast.success(res.success);
+        form.reset(); // Reset the form after successful registration
+        // you don’t need baseUrl here—Next will respect your
+        // NEXT_PUBLIC_URL setting automatically if you push a relative path
+        router.push("/login");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
-  const { pending } = useFormStatus();
   return (
     <CardWrapper
       label="Create an account"
@@ -128,8 +125,11 @@ const RegisterForm = () => {
               )}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={pending}>
-            {loading ? "Loading..." : "Register"}
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ?( <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Registering User...</>)
+             : ("Register")}
           </Button>
         </form>
       </Form>

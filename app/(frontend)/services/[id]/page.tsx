@@ -3,12 +3,16 @@ import { servicesData } from '@/lib/utils';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ChevronRight, Clock, Users, Globe, Zap } from 'lucide-react';
+import { HERO_CAROUSEL_QUERY_ID } from '@/sanity/lib/queries';
+import { client } from '@/sanity/client';
+import { sanityFetch } from '@/sanity/live';
+import { PortableText } from 'next-sanity';
 
-export function generateStaticParams() {
-  return servicesData.map((service) => ({
-    id: service.id,
-  }));
-}
+// export function generateStaticParams() {
+//   return servicesData.map((service) => ({
+//     id: service.id,
+//   }));
+// }
 
 export default async function Page({
   params,
@@ -16,22 +20,38 @@ export default async function Page({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const service = servicesData.find((s) => s.id === id);
-  const otherServices = servicesData.filter((s) => s.id !== id).slice(0, 3);
+  // const {data} = await client.fetch(HERO_CAROUSEL_QUERY_ID, { id: (await params).id });
+  const {data} = await sanityFetch({query:HERO_CAROUSEL_QUERY_ID, params:{id}});
+  // const service = servicesData.find((s) => s.id === id);
+  // const otherServices = servicesData.filter((s) => s.id !== id).slice(0, 3);
+  console.log(data, "data")
 
-  if (!service) {
+  const {
+    Button_Text: btnText,
+    Button_URL: btnUrl,
+    Description: description,
+    Image_URL: imageUrl,
+    Title: title,
+    _createdAt: createdAt,
+    _id: slug,
+  } = data
+  if (!data) {
     notFound();
   }
+
+  // if (!service) {
+  //   notFound();
+  // }
 
   return (
     <div className="py-12 relative">
       <SecondaryCarousel 
         id="whoWeAre" 
-        img={service.image}
-        alt={service.title}
-        title={service.title}
+        img={imageUrl}
+        alt={title}
+        title={title}
       />
-      
+      {/* <h2>{Sdata.}</h2> */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-7xl mx-auto">
           <nav className="flex justify-between items-center mb-8">
@@ -43,7 +63,7 @@ export default async function Page({
               Back to Services
             </Link>
             <Link
-              href={`/services#${service.id}`}
+              href={`/services#${slug}`}
               className="text-green-600 hover:text-green-700 transition-colors"
             >
               View in Services Page
@@ -55,13 +75,14 @@ export default async function Page({
               <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
                 <div className="p-8">
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                    {service.title}
+                    {title}
                   </h1>
                   
                   <div className="prose prose-lg dark:prose-invert max-w-none">
-                    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                    {/* <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                       {service.description}
-                    </p>
+                    </p> */}
+                    <PortableText value={description} />
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
@@ -94,7 +115,7 @@ export default async function Page({
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
                 <h2 className="text-xl font-bold mb-4">Get Started</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Ready to experience our {service.title.toLowerCase()}? Request a quote now and our team will get back to you shortly.
+                  Ready to experience our {title.toLowerCase()}? Request a quote now and our team will get back to you shortly.
                 </p>
                 <Link
                   href="/inquiries"
@@ -105,7 +126,7 @@ export default async function Page({
                 </Link>
               </div>
 
-              <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
+              {/* <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6">
                 <h2 className="text-xl font-bold mb-4">Other Services</h2>
                 <div className="space-y-4">
                   {otherServices.map((otherService) => (
@@ -121,7 +142,7 @@ export default async function Page({
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

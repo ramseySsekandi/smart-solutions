@@ -15,12 +15,12 @@ import { useForm } from "react-hook-form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { z } from "zod";
-import { useFormStatus } from "react-dom";
 import { useState } from "react";
 import { LoginSchema } from "@/lib/zod";
 import { loginUser } from "@/app/actions/login";
 import toast from "react-hot-toast";
 import GoogleLogin from "./google-button";
+import { Loader2 } from "lucide-react";
 
 const LoginForm = () => {
     const [loading, setLoading] = useState(false);
@@ -33,28 +33,27 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof LoginSchema>) => {
-     try {
-        setLoading(true);
-        loginUser(data)
-          .then((res) => {
-            if (res.error) {
-              toast.error(res.error);
-            } if (res.success) {
-              toast.success(res.success);
-            }
-          })
-          .catch((error) => {
-            console.error("Error during login:", error);
-          });
-      } catch (error) {
-        
-      } finally{
-        setLoading(false);
+  const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
+    setLoading(true);
+    try {
+      const res = await loginUser(data);
+  
+      if (res.error) {
+        toast.error(res.error);
+      } else if (res.success) {
+        toast.success(res.success);
+        form.reset();
       }
+    } catch (err) {
+      console.error("Error during login:", err);
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
-  const { pending } = useFormStatus();
+  // const { pending } = useFormStatus();
   return (
     <CardWrapper
       label="Login to your account"
@@ -96,8 +95,11 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={pending}>
-            {loading ? "Logging In..." : "Login"}
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ?( <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Logging In...</>)
+             : ("Login")}
           </Button>
         </form>
       </Form>

@@ -1,9 +1,10 @@
-"use client";
+// "use client";
 import VideoCarousel from '@/components/Video-Carousel'
 import Hero from '@/components/Hero'
 import React from 'react'
 
-const page = () => {
+
+const page = async () => {
   return (
     <div className="relative">
       <div className='flex flex-col'>

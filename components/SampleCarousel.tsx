@@ -5,9 +5,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { servicesData } from "@/lib/utils";
+// import { servicesData } from "@/lib/utils";
+import { HeroCarousel } from "@/sanity/types";
+import { PortableText } from "next-sanity";
 
-export default function SampleCarousel() {
+
+export default function SampleCarousel({servicesData}:{ servicesData: Omit<HeroCarousel, '_type' | '_rev' | '_updatedAt'>[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start", speed: 5, skipSnaps: true, dragFree: true} as any,
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
@@ -49,21 +52,23 @@ export default function SampleCarousel() {
                 <CardContent className="px-0 pt-0">
                   <div className="relative mb-4">
                     <img
-                      src={item.image}
-                      alt={item.title}
+                      src={item.Image_URL}
+                      alt={item.Title}
                       className="w-full h-48 lg:h-32 object-cover"
                     />
                   </div>
                   <h3 className="px-6 text-center font-bold mb-2 line-clamp-2 text-gray-800">
-                    {item.title}
+                    {item.Title}
                   </h3>
-                  <div className="space-y-5 text-center px-4 text-gray-700">
-                    <p className="line-clamp-4">{item.description}</p>
+                  <div className="space-y-5 text-center px-4 text-gray-700 ">
+                    {/* <p className="line-clamp-4">{item.description}</p> */}
+                    <PortableText value={item.Description ?? []} />
                     <Link 
-                      href={`/services/${item.id}`}
+                      // href={`/services/${item.id}`}
+                      href={`services/${item._id}`}
                       className="inline-block py-2 px-4 rounded-xl text-green-600 border border-green-600 text-sm hover:bg-green-50 transition-colors"
                     >
-                      Read More
+                      {item.Button_Text}
                     </Link>
                   </div>
                 </CardContent>

@@ -47,6 +47,25 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         },
       }
 
-    }
-  },
-})
+    },
+  //   authorized: async ({ auth }) => {
+  //     // Logged in users are authenticated, otherwise redirect to login page
+  //     return !!auth 
+  // },
+   // authorized: async ({ auth, request: { nextUrl } }) => {
+    //   const isLoggedIn = !!auth?.user
+    //   const isOnDashboard = nextUrl.pathname.startsWith('/dashboard')
+    //   const isOnAuth = nextUrl.pathname.startsWith('/login') || 
+    //                   nextUrl.pathname.startsWith('/register')
+
+    //   if (isOnDashboard && !isLoggedIn) {
+    //       return false // Redirect unauthenticated users to login page
+    //   }
+
+    //   if (isOnAuth && isLoggedIn) {
+    //       return Response.redirect(new URL('/dashboard', nextUrl))
+    //   }
+
+    //   return true
+    // },
+}})

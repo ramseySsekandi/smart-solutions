@@ -8,6 +8,7 @@ import { db } from "./prisma/db"
 import bcrypt from "bcryptjs"
 
 export default { 
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [GitHub({
         // We can include the clientId and clientSecret here, but in v5 it can be auto detected if it has AUTH_ like in example 2
         clientId: process.env.AUTH_GITHUB_ID ?? "",

@@ -2,7 +2,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { Card, CardContent } from "./ui/card";
-
 const items = [
   {
     title: "Real Estate and Construction",
@@ -32,6 +31,7 @@ const items = [
 ];
 
 export default function SimpleSlider() {
+
   var settings = {
     dots: true,
     infinite: true,

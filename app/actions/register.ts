@@ -3,7 +3,6 @@ import { RegisterSchema } from "@/lib/zod";
 import { z } from "zod";
 import { db } from "@/prisma/db";
 import { hash } from "bcryptjs";
-import { error } from "console";
 
 export async function registerUser(data: z.infer<typeof RegisterSchema>) {
     // Validate the data using Zod schema
