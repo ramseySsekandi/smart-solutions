@@ -35,10 +35,10 @@ export async function loginUser(data: { email: string; password: string }) {
         await signIn("credentials", {
             email: userExists.email,
             password,
-            redirectTo: `${baseUrl}/dashboard`,
+            redirectTo: `${baseUrl}/admin`,
         });
-    } catch (error) {      
-        if(error instanceof AuthError) {
+    } catch (error) {
+        if (error instanceof AuthError) {
             switch ((error as any).type) {
                 case "CredentialsSignin":
                     return {

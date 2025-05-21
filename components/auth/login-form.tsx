@@ -41,12 +41,11 @@ const LoginForm = () => {
       if (res.error) {
         toast.error(res.error);
       } else if (res.success) {
-        toast.success(res.success);
+        toast.success("User logged in successfully");
         form.reset();
       }
     } catch (err) {
       console.error("Error during login:", err);
-      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }
