@@ -10,13 +10,15 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ServicePage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const service = servicesData.find(async (s) => s.id === (await params).id);
-  const otherServices = servicesData.filter(async (s) => s.id !== (await params).id).slice(0, 3);
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function ServicePage({ params }: Props) {
+  const service = servicesData.find((s) => s.id === params.id);
+  const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
 
   if (!service) {
     notFound();
