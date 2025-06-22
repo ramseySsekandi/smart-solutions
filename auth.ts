@@ -1,1 +1,0 @@
-// Authentication is disabled in this project. File left intentionally blank.

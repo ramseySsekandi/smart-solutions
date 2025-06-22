@@ -1,1 +1,0 @@
-// Authentication is disabled in this project. This route is intentionally left blank.

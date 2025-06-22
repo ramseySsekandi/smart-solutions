@@ -1,0 +1,1 @@
+This file is a placeholder to allow the folder to be deleted by the agent. Please delete the entire [...nextauth] folder manually if this file remains.
