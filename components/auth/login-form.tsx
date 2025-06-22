@@ -40,12 +40,12 @@ const LoginForm = () => {
   
       if (res.error) {
         toast.error(res.error);
-      } else if (res.success) {
-        toast.success("User logged in successfully");
-        form.reset();
+      } else {
+        toast.error("Login is currently disabled.");
       }
     } catch (err) {
       console.error("Error during login:", err);
+      toast.error("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
