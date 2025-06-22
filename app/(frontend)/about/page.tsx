@@ -1,113 +1,151 @@
 import AboutCarousel from '@/components/About-Carousel';
 import SecondaryCarousel from '@/components/Secondary-Carousel';
 import Image from 'next/image';
-import React from 'react'
-import Link from "next/link";
 
-const page = () => {
-    const boardLink = ["/about/gmd.jpg",
-        "/about/iyenemi.png",
-         "/about/lawrence.jpg"]
-const managementLink = ["/about/daisy.png", "/about/nneka.png", "/about/elena.jpg", "/about/emuesiri.png"]
-const policiesLink = ["/about/cashes.png", "/about/ncd.png", "/about/quality.png"]
-const remainder = managementLink.length % 3;
+// Local static data to replace Sanity
+const aboutPageData = {
+  hero: {
+    title: 'Who We Are',
+    image: '/about/bow-tie.png',
+    description: 'We are a team of professionals dedicated to delivering value and excellence.'
+  },          
+  principles: {
+    description: 'Our principles are integrity, innovation, and impact.'
+  },
+  team: {
+    board: [
+      { _id: '1', name: 'John Doe', image: '/about/elena.jpg' },
+      { _id: '2', name: 'Jane Smith', image: '/about/daisy.png' },
+      { _id: '3', name: 'Michael Brown', image: '/about/cashes.png' }
+    ],
+    management: [
+      { _id: '4', name: 'Sarah Lee', image: '/about/emuesiri.png' },
+      { _id: '5', name: 'David Kim', image: '/about/bow-tie.png' },
+      { _id: '6', name: 'Emily White', image: '/about/elena.jpg' }
+    ]
+  },
+  history: [
+    { _id: 'h1', year: 2015, title: 'Founded', description: 'Company was founded in 2015.', image: '/about/bow-tie.png' },
+    { _id: 'h2', year: 2018, title: 'Expansion', description: 'Expanded to new markets.', image: '/about/daisy.png' },
+    { _id: 'h3', year: 2022, title: 'Innovation', description: 'Launched innovative services.', image: '/about/cashes.png' }
+  ],
+  policies: [
+    { _id: 'p1', title: 'Quality Policy', description: 'We ensure quality in all our services.', image: '/about/bow-tie.png' },
+    { _id: 'p2', title: 'Sustainability Policy', description: 'Committed to sustainable practices.', image: '/about/daisy.png' },
+    { _id: 'p3', title: 'Diversity Policy', description: 'We value diversity and inclusion.', image: '/about/cashes.png' }
+  ]
+};
+
+const About = () => {
+  const { hero, principles, team, history, policies } = aboutPageData;
+
+  // Helper function to get image URL or fallback
+  const getImageUrl = (item: { image?: string }) => (item?.image ? item.image : '/hero-about.jpeg');
+
   return (
     <div className="relative">
-      <SecondaryCarousel id = 'whoWeAre' img = "https://img.freepik.com/free-photo/group-diverse-business-people_53876-20967.jpg?ga=GA1.1.971324345.1742564106&semt=ais_hybrid" alt = 'Cyber Technology: ' title = 'Who We Are'/>
+      <SecondaryCarousel 
+        id='whoWeAre' 
+        img={getImageUrl(hero)} 
+        alt={hero?.title || 'Who We Are'} 
+        title={hero?.title || 'Who We Are'}
+      />
       <section className='mt-[250px] bg-gray-100 text-gray-900'>
-      {/* Hero One */}
-      <div className="text-center max-w-5xl mx-auto py-12 px-6 space-y-4">
-        <h2 className='text-lg font-bold'>Innovative solutions for a digital world. Our technology services provide cutting-edge solutions for businesses and individuals</h2>
-        <p text-lg>Reliable, Secure and efficient IT solutions for businesses of all sizes. Our expert team provides comprehensive support, from network management to cyber security to keep your operations running smoothly</p>
-      </div>
-      </section>
-      <section className='text-gray-900 max-w-5xl px-4 mx-auto py-8 lg:flex lg:flex-col lg:items-center lg:px-5 space-y-4 lg:space-y-12' id="ourPrinciples">
-      <h1 className='text-4xl text-center font-bold'>Our Bow Tie<span className='text-green-600'> Principles.</span>
-          </h1>
-          <div className='mx-auto w-full h-40 md:h-48 lg:h-60 lg:w-2/3 relative'>
-          <Image src="/about/bow-tie.png" alt='bow-tie' className='object-center w-full' fill/>
-        </div>
-        <div className="flex gap-8 text-sm sm:text-base font-sans leading-snug justify-between lg:gap-10 lg:p-3">
-          <p className='w-1/2 lg:px-6 py-3'>We believe that to enhance our brand as a major oil & gas solutions company,
-             it is vital that we not only have world-class resources and expertise but that we are also honest,
-            dedicated and transparent in everything we do.
-          </p>
-          <p className='w-1/2 lg:px-6 py-3'>Our commitment to excellence is evident in our ability to deliver on our promises.
-          We are intent on adhering to the deadlines while focusing our attention to the minor detail of any of our projects.
-          Our persistence in constant training and capacity building of our personnel has allowed us to win the trust of our 
-          clients and establish strong partnerships with all our customers. This entrepreneurial attitude has also helped us
-          foster closer working relationships, which we have seen consistently lead to enhanced levels of services and a more
-          effective engineering outcome.
-          </p>
+        <div className="text-center max-w-5xl mx-auto py-12 px-6 space-y-4">
+          <p>{hero?.description}</p>
         </div>
       </section>
-      {/* Hero Two */}
-      {/* Our Leadership */}
-      <section className='text-gray-900 max-w-5xl px-4 mx-auto py-8 lg:flex lg:flex-col lg:items-center lg:px-5 space-y-4 lg:space-y-12' id="ourLeadership">
-      <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Leadership.</span></h1>
-      <div className="py-4 w-full">
-        <h2 className='text-3xl font-bold'>Board</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-4 mx-auto px-4 py-8">
-        {boardLink.map((link, index) => (
-            <div className="relative w-full h-80" key={index}>
-                <Image
-               src={link}
-               className='relative object-cover md:object-contain shadow-lg'
-               fill
-               alt="Image 1"
-             />
-            </div>
-               
-          ))}
-        
-        </div>
-      </div>
-      <div className="py-4 w-full">
-        <h2 className='text-3xl font-bold'>Management</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto px-4 py-8">
-        {managementLink.map((link, index) => {
-          const isSingleInLastRow = remainder === 1 && index === managementLink.length - 1;
-          return (
 
-            <div key={index} className={`relative w-full h-80 ${isSingleInLastRow ? 'md:col-start-2' : ''}`}>
-                <Image
-               src={link}
-               className='relative object-cover md:object-contain shadow-lg'
-               fill
-               alt="Image 1"
-             />
-            </div>
-          )       
-          })}
-        
-        </div>
-      </div>
-      {/* Our History */}
-       <section id='ourHistory'>
-       <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> History.</span></h1>
-       <AboutCarousel />
-       </section>
-       {/* Our Policies */}
-       <section id='ourPolicies'>
+      {principles && (
+        <section id='ourPrinciples' className='my-10'>
+          <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Principles.</span></h1>
+          <div className="text-center max-w-5xl mx-auto py-12 px-6 space-y-4">
+            <p>{principles.description}</p>
+          </div>
         </section>
-        <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Policies.</span></h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:w-full gap-4 mx-auto px-4 py-8">
-        {policiesLink.map((link, index) => (
-            <div className="relative w-full h-80" key={index}>
-                <Image
-               src={link}
-               className='relative object-cover md:object-contain '
-               fill
-               alt="Image 1"
-             />
-            </div>
-               
-          ))}
-        
+      )}
+
+      <section id='ourTeam'>
+        <h1 className='text-4xl text-center font-bold'>Board of<span className='text-green-600'> Directors.</span></h1>
+        <div className="mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:w-full gap-4 mx-auto px-4 py-8">
+            {team?.board?.map((member, index) => {
+              const isSingleInLastRow = team.board.length % 3 === 1 && index === team.board.length - 1;
+              const imageUrl = getImageUrl(member);
+              return (
+                <div
+                  key={member._id}
+                  className={`relative w-full h-80 ${isSingleInLastRow ? 'md:col-start-2' : ''}`}
+                >
+                  <Image
+                    src={imageUrl}
+                    className='relative object-cover md:object-contain shadow-lg'
+                    fill
+                    alt={member.name || 'Board Member'}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
+
+        <h1 className='text-4xl text-center font-bold mt-16'>Management<span className='text-green-600'> Team.</span></h1>
+        <div className="mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:w-full gap-4 mx-auto px-4 py-8">
+            {team?.management?.map((member, index) => {
+              const isSingleInLastRow = team.management.length % 3 === 1 && index === team.management.length - 1;
+              const imageUrl = getImageUrl(member);
+              return (
+                <div
+                  key={member._id}
+                  className={`relative w-full h-80 ${isSingleInLastRow ? 'md:col-start-2' : ''}`}
+                >
+                  <Image
+                    src={imageUrl}
+                    className='relative object-cover md:object-contain shadow-lg'
+                    fill
+                    alt={member.name || 'Management Team Member'}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <section id='ourHistory'>
+          <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> History.</span></h1>
+          <AboutCarousel historyData={history || []} />
+        </section>
+
+        <section id='ourPolicies'>
+          <h1 className='text-4xl text-center font-bold'>Our<span className='text-green-600'> Policies.</span></h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:w-full gap-4 mx-auto px-4 py-8">
+            {policies?.map((policy) => {
+              const imageUrl = getImageUrl(policy);
+              return (
+                <div className="relative w-full h-80" key={policy._id}>
+                  <Image
+                    src={imageUrl}
+                    className='relative object-cover md:object-contain shadow-lg'
+                    fill
+                    alt={policy.title || 'Policy'}
+                  />
+                  {policy.description && (
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <div className="text-white p-4 text-center">
+                        <h3 className="text-xl font-semibold mb-2">{policy.title}</h3>
+                        <p>{policy.description}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </section>
-      </div>
-  )
+    </div>
+  );
 }
 
-export default page
+export default About;

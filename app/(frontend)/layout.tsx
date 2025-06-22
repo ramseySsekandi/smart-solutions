@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer"
 import FooterTwo from "@/components/Footer-Two"
-import SiteHeader from "@/components/Navbar"
-import { SanityLive } from "@/sanity/live";
+import Navbar from "@/components/Navbar"
 
 
 export default function MainLayout({
@@ -11,13 +10,12 @@ export default function MainLayout({
 }) {
   return (
     <div className="main-layout">
-      <SiteHeader />
+      <Navbar />
       <main>
       {children}
       </main>
       <Footer />
       <FooterTwo />
-      <SanityLive />
     </div>
   )
 }

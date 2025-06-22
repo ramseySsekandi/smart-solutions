@@ -35,7 +35,7 @@ export async function loginUser(data: { email: string; password: string }) {
         await signIn("credentials", {
             email: userExists.email,
             password,
-            redirectTo: `${baseUrl}/admin`,
+            redirectTo: `${baseUrl}/dashboard`,
         });
     } catch (error) {
         if (error instanceof AuthError) {

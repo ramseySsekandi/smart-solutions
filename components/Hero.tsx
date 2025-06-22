@@ -1,16 +1,10 @@
 import { CircleCheckBig, Target } from 'lucide-react'
 import SampleCarousel from './SampleCarousel'
 import SimpleSlider from './Hero-Carousel-Two'
-import { HERO_CAROUSEL_QUERY } from '@/sanity/lib/queries';
-import { sanityFetch } from "@/sanity/live";
-import { HeroCarousel } from '@/sanity/types';
+import { servicesData } from '@/lib/utils';
 
 
-const Hero = async  () => {
-  const { data: servicesData } = await sanityFetch({ query: HERO_CAROUSEL_QUERY })
-  // console.log(servicesData, "Data from sanityFetch")
-
-
+const Hero = () => {
   return (
     <div className='w-full mt-5'>
         {/* Heading Hero */}
@@ -18,7 +12,7 @@ const Hero = async  () => {
         {/* Carousel Hero */}
         
         {/* <HeroCarousel /> */}
-        <SampleCarousel servicesData = { servicesData as Omit<HeroCarousel, '_type' | '_rev' | '_updatedAt'>[] } />
+        <SampleCarousel servicesData={servicesData} />
         {/* Core values Hero */}
         <div className="bg-green-700 text-gray-300 text-center grid grid-cols-1 md:grid-cols-2 lg:py-20 py-10 px-6 space-y-10 gap-8 items-stretch">
          <div className="space-y-8 p-3 border-2 border-gray-300 h-full rounded-xl space-x-4 mx-auto flex flex-col items-center justify-center">
