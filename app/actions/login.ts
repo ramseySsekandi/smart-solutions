@@ -1,9 +1,7 @@
 "use server"
 
-import { signIn } from "@/auth";
 import { LoginSchema } from "@/lib/zod";
 import { db } from "@/prisma/db";
-import { AuthError } from "next-auth";
 
 export async function loginUser(data: { email: string; password: string }) {
     // Validate the data on Server with zod
@@ -30,31 +28,7 @@ export async function loginUser(data: { email: string; password: string }) {
         };
     }
 
-    try {
-        const baseUrl = process.env.NEXT_PUBLIC_URL
-        await signIn("credentials", {
-            email: userExists.email,
-            password,
-            redirectTo: `${baseUrl}/dashboard`,
-        });
-    } catch (error) {
-        if (error instanceof AuthError) {
-            switch ((error as any).type) {
-                case "CredentialsSignin":
-                    return {
-                        error: "Invalid credentials",
-                    };
-                default:
-                    return {
-                        error: "Please verify your email address",
-                    };
-            }
-        }
-
-        throw error
-    }
-
     return {
-        success: "User logged in successfully",
+        error: "Authentication is disabled in this project."
     };
 }

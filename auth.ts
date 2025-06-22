@@ -1,11 +1,1 @@
-import NextAuth from "next-auth"
-import authConfig from "./auth.config"
-import { db } from "@/prisma/db"
-import { PrismaAdapter } from "@auth/prisma-adapter"
-
- 
-export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(db),
-  session: { strategy: "jwt" },
-  ...authConfig,
-})
+// Authentication is disabled in this project. File left intentionally blank.
