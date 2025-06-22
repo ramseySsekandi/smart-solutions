@@ -1,2 +1,1 @@
-import { handlers } from "@/auth" // Referring to the auth.ts we just created
-export const { GET, POST } = handlers
+// Authentication is disabled in this project. This route is intentionally left blank.
