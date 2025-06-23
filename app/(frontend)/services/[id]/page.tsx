@@ -10,12 +10,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: {
-  params: { id: string }
+export default async function ServicePage({ params }: {
+  params: Promise<{ id: string }>
 }) {
-  const service = servicesData.find((s) => s.id === params.id);
+  const { id } = await params;
+  const service = servicesData.find((s) => s.id === id);
   const otherServices = servicesData
-    .filter((s) => s.id !== params.id)
+    .filter((s) => s.id !== id)
     .sort(() => Math.random() - 0.5)
     .slice(0, 3);
 
