@@ -10,10 +10,14 @@ export function generateStaticParams() {
   }));
 }
 
-
-export default async function ServicePage({ params }:  { params: { id: string; } }) {
+export default function ServicePage({ params }: {
+  params: { id: string }
+}) {
   const service = servicesData.find((s) => s.id === params.id);
-  const otherServices = servicesData.filter((s) => s.id !== params.id).slice(0, 3);
+  const otherServices = servicesData
+    .filter((s) => s.id !== params.id)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
 
   if (!service) {
     notFound();
