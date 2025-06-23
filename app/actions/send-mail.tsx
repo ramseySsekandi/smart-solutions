@@ -3,7 +3,7 @@
 import { IContactInputs } from "@/types/mail-forms";
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/components';
-import { ContactEmail } from "@/components/email/contact-email"
+import { ContactEmail } from "@/components/email/ContactEmail"
 
 
 export async function sendContactMail(data:IContactInputs,){
@@ -20,7 +20,9 @@ export async function sendContactMail(data:IContactInputs,){
             },
         });
 
-        const emailHtml = await render(<ContactEmail userName={name} message={message} />)
+        const emailHtml = await render(
+          <ContactEmail name={name} email={email} message={message} />
+        )
 
         const mailOptions = {
             from: email,
