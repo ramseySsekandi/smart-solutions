@@ -2,6 +2,8 @@
 
 import { LoginSchema } from "@/lib/zod";
 import { db } from "@/prisma/db";
+import { compare } from "bcryptjs";
+import { createSession } from "@/lib/session";
 
 export async function loginUser(data: { email: string; password: string }) {
     // Validate the data on Server with zod
@@ -15,20 +17,29 @@ export async function loginUser(data: { email: string; password: string }) {
     const { email, password } = validatedData;
 
     // Check if the user exists in the database
-    const userExists = await db.user.findFirst({
+    const user = await db.user.findFirst({
         where: {
             email,
         },
     });
 
-
-    if (!userExists || !userExists.password || !userExists.email) {
+    if (!user || !user.password) {
         return {
             error: "User not found",
         };
     }
 
+    const isPasswordValid = await compare(password, user.password);
+    if (!isPasswordValid) {
+        return {
+            error: "Invalid password",
+        };
+    }
+
+    // Create session after successful login
+    await createSession(user.id);
+
     return {
-        error: "Authentication is disabled in this project."
+        success: "Login successful",
     };
 }

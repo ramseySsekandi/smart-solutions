@@ -3,6 +3,7 @@ import { RegisterSchema } from "@/lib/zod";
 import { z } from "zod";
 import { db } from "@/prisma/db";
 import { hash } from "bcryptjs";
+import { createSession } from "@/lib/session";
 
 export async function registerUser(data: z.infer<typeof RegisterSchema>) {
     // Validate the data using Zod schema
@@ -41,6 +42,9 @@ export async function registerUser(data: z.infer<typeof RegisterSchema>) {
            password: hashedPassword,
        },
    });
+
+   // Create session after successful registration
+   await createSession(newUser.id);
 
    return {
        success: "User registered successfully",

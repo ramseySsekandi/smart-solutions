@@ -1,11 +1,13 @@
 import React from 'react'
+import ToastProvider from "@/components/ToastProvider"
 
 const AuthLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <section className='w-full'>
-        <div className='h-screen bg-gray-800 flex items-center justify-center'>
-            {children}
-        </div>
+      <ToastProvider />
+      <div className='h-screen flex items-center justify-center'>
+        {children}
+      </div>
     </section>
   )
 }

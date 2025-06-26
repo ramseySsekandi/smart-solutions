@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { logoutUser } from "@/app/actions/logout";
 
 // Types for navigation
 interface NavItem {
@@ -57,6 +58,19 @@ export default function NavbarClient({ navigation, servicesData }: NavbarClientP
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Helper for checking auth (simple: check for session cookie)
+  const [isAuth, setIsAuth] = useState(false);
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      setIsAuth(document.cookie.includes("session="));
+    }
+  }, [pathname]);
+
+  const handleLogout = async () => {
+    await logoutUser();
+    window.location.href = "/login?loggedOut=1";
+  };
 
   return (
     <nav className="z-[100] relative bg-white border-b border-green-500 dark:bg-gray-900 dark:border-green-700">
@@ -124,6 +138,11 @@ export default function NavbarClient({ navigation, servicesData }: NavbarClientP
                 </li>
               )
             )}
+            {isAuth && (
+              <li>
+                <button onClick={handleLogout} className="ml-4 px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition-colors">Logout</button>
+              </li>
+            )}
           </ul>
         </div> {/* End desktop nav */}
         {/* Mobile menu button */}
@@ -140,6 +159,9 @@ export default function NavbarClient({ navigation, servicesData }: NavbarClientP
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
             </svg>
           </button>
+          {isAuth && (
+            <button onClick={handleLogout} className="ml-2 px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition-colors">Logout</button>
+          )}
         </div>
       </div>
       {/* Mobile menu slides down from navbar, only on small screens */}
