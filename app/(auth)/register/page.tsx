@@ -18,7 +18,7 @@ const Page = () => {
             <Link href="/" className="flex items-center gap-2 text-[#00c6ff] hover:text-[#fff] transition"><FaHome /> Home</Link>
           </div>
         </nav>
-        <main className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#00c6ff]/10 to-[#0072ff]/10">
+        <main className="flex min-h-[calc(100vh-4.5rem)] w-full items-center justify-center bg-gradient-to-br from-[#00c6ff]/10 to-[#0072ff]/10">
           <div className="flex flex-col items-center w-full px-4">
             <RegisterForm />
           </div>
