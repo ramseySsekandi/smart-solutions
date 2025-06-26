@@ -34,7 +34,7 @@ function LoginPageContent() {
   }, []); // Only run on mount
 
   return (
-    <div className="min-h-screen md:w-3xl flex flex-col bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] text-white">
+    <div className="min-h-svh md:w-3xl flex flex-col bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] text-white">
       {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-30 w-full bg-gradient-to-r from-[#232526] to-[#0f2027] backdrop-blur shadow flex items-center justify-between px-10 py-4 mb-10 border-b border-[#2c5364]">
         <div className="flex items-center gap-3">
