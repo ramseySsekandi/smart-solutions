@@ -34,9 +34,9 @@ function LoginPageContent() {
   }, []); // Only run on mount
 
   return (
-    <div className="min-h-svh md:w-3xl flex flex-col bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] text-white">
+    <div className="min-h-svh w-full md:max-w-5xl flex flex-col bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] text-white">
       {/* Top Navigation Bar */}
-      <nav className="sticky top-0 z-30 w-full bg-gradient-to-r from-[#232526] to-[#0f2027] backdrop-blur shadow flex items-center justify-between px-10 py-4 lg:mb-10 border-b border-[#2c5364]">
+      <nav className="sticky top-0 z-30 w-full px-4 sm:px-10 bg-gradient-to-r from-[#232526] to-[#0f2027] backdrop-blur shadow flex items-center justify-between py-4 border-b border-[#2c5364]">
         <div className="flex items-center gap-3">
           <FaSignInAlt className="text-[#00c6ff] text-2xl" />
           <span className="font-extrabold text-2xl tracking-tight text-white drop-shadow">Login</span>
@@ -45,8 +45,8 @@ function LoginPageContent() {
           <Link href="/" className="flex items-center gap-2 text-[#00c6ff] hover:text-[#fff] transition"><FaHome /> Home</Link>
         </div>
       </nav>
-      <main className="flex min-h-[calc(100vh-4.5rem)] w-full items-center justify-center bg-gradient-to-br from-[#00c6ff]/10 to-[#0072ff]/10">
-        <div className="flex flex-col items-center w-full px-4">
+      <main className="flex px-4 sm:px-10 min-h-[calc(100vh-4.5rem)] w-full items-center justify-center ">
+        <div className="flex bg-amber-600 max-w-2xl flex-col items-center w-full">
           <LoginForm />
         </div>
       </main>

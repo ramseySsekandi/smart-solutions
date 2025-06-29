@@ -5,7 +5,7 @@ const AuthLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <section className='w-full'>
       <ToastProvider />
-      <div className='h-screen flex items-center justify-center'>
+      <div className='h-screen w-full flex justify-center'>
         {children}
       </div>
     </section>
