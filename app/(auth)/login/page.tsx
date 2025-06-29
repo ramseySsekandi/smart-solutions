@@ -46,7 +46,7 @@ function LoginPageContent() {
         </div>
       </nav>
       <main className="flex px-4 sm:px-10 min-h-[calc(100vh-4.5rem)] w-full items-center justify-center ">
-        <div className="flex bg-amber-600 max-w-2xl flex-col items-center w-full">
+        <div className="flex max-w-2xl flex-col items-center w-full">
           <LoginForm />
         </div>
       </main>
