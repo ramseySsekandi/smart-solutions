@@ -11,7 +11,7 @@ export default async function QuotationsPage() {
       <nav className="sticky top-0 z-30 w-full bg-gradient-to-r from-[#232526] to-[#0f2027] backdrop-blur shadow flex items-center justify-between px-0 md:px-10 py-4 mb-10 border-b border-[#2c5364]">
         <div className="flex items-center gap-3 pl-2 md:pl-0">
           <FaTachometerAlt className="text-[#00c6ff] text-2xl" />
-          <span className="font-extrabold text-2xl tracking-tight text-white drop-shadow">Quotations</span>
+          <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-white drop-shadow">Quotations</span>
         </div>
         <div className="flex items-center gap-4 md:gap-8 pr-2 md:pr-0">
           <Link href="/dashboard" className="flex items-center gap-2 text-[#00c6ff] hover:text-[#fff] transition"><FaTachometerAlt /> Dashboard</Link>
