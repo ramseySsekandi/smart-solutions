@@ -58,10 +58,27 @@ export default async function ServicePage({ params }: {
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                     {service.title}
                   </h1>
-                    <div className="prose prose-lg dark:prose-invert max-w-none">
-                    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                  <div className="prose prose-lg dark:prose-invert max-w-none">
+                    <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
                       {service.description}
                     </p>
+                    {service.services && service.services.length > 0 && (
+                      <ul className="list-disc list-inside space-y-4">
+                        {service.services.map((sub, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="mt-1 mr-2 text-green-600 dark:text-green-400">•</span>
+                            <div>
+                              <h3 className="inline font-semibold text-xl text-green-700 dark:text-green-400 mb-1 align-middle">
+                                {sub.title}
+                              </h3>
+                              <p className="text-gray-600 dark:text-gray-300 text-base mt-1">
+                                {sub.description}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">

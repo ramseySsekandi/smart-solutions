@@ -6,6 +6,7 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { submitQuotation } from '@/app/actions/quotation';
 
 const QuotationForm = () => {
     const { register, handleSubmit, formState: { errors }, reset, control } = useForm<IQuotationInputs>();
@@ -14,13 +15,13 @@ const QuotationForm = () => {
     const onSubmit: SubmitHandler<IQuotationInputs> = async (data) => {
       try {
         setFormStatus(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/mail/quotation`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
+        const res = await submitQuotation({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          description: data.description,
         });
-  
-        const res = await response.json();
         if (res.success) {
           toast.success('Quotation request sent successfully!');
           reset();

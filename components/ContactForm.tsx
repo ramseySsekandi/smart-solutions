@@ -1,9 +1,9 @@
 'use client'
-import { sendContactMail } from '@/app/actions/send-mail';
 import { IContactInputs } from '@/types/mail-forms';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { submitContact } from '@/app/actions/contact';
 
 const ContactForm = () => {
     
@@ -13,7 +13,7 @@ const ContactForm = () => {
       const onSubmit = async (data: IContactInputs) => {
        try {
         setLoading(true);
-        const response = await sendContactMail(data);
+        const response = await submitContact(data);
         if (response?.success) {
         toast.success('Submitted Successfully')
         reset()
@@ -25,8 +25,6 @@ const ContactForm = () => {
        } finally{
         setLoading(false)
        }
-       
-       
       };
   return (
     <div className=''>

@@ -4,24 +4,20 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useState } from 'react'
 import { IFeedbackInputs } from '@/types/mail-forms';
 import toast from 'react-hot-toast';
+import { submitFeedback } from '@/app/actions/feedback';
 
 const FeedbackForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFeedbackInputs>();
     const [formStatus, setFormStatus] = useState(false);
 
     const onSubmit: SubmitHandler<IFeedbackInputs> = async (data) => {
-      const baseUrl = process.env.NEXT_PUBLIC_URL;
       try {
-        console.log(data);
         setFormStatus(true);
-        // Send the data to the server
-        const response = await fetch(`${baseUrl}/api/mail/feedback`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
+        const res = await submitFeedback({
+          name: data.name,
+          email: data.email,
+          feedback: data.feedback,
         });
-        
-        const res = await response.json();
         if (res.success) {
           toast.success('Feedback sent successfully!');
           reset();

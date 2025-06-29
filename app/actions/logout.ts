@@ -1,8 +1,9 @@
 "use server";
 import { deleteSession } from "@/lib/session";
-import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export async function logoutUser() {
   await deleteSession();
-  redirect("/login?loggedOut=1");
+  revalidatePath("/");
+  return { success: true, redirect: "/login?loggedOut=1" };
 }

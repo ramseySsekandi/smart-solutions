@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { respondToContact, respondToQuotation, respondToFeedback } from "@/app/actions/dashboard";
+import { respondToContactWithEmail, respondToQuotationWithEmail, respondToFeedbackWithEmail } from "@/app/actions/respond";
 
 export default function RespondForm({ id, type }: { id: string; type: "contact" | "quotation" | "feedback" }) {
   const [response, setResponse] = useState("");
@@ -8,23 +8,23 @@ export default function RespondForm({ id, type }: { id: string; type: "contact" 
   const handleRespond = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (type === "contact") await respondToContact(id, response);
-    if (type === "quotation") await respondToQuotation(id, response);
-    if (type === "feedback") await respondToFeedback(id, response);
+    if (type === "contact") await respondToContactWithEmail(id, response);
+    if (type === "quotation") await respondToQuotationWithEmail(id, response);
+    if (type === "feedback") await respondToFeedbackWithEmail(id, response);
     setLoading(false);
     setResponse("");
     // Optionally, refresh the page or show a toast
   };
   return (
-    <form onSubmit={handleRespond} className="flex gap-2 mt-2">
+    <form onSubmit={handleRespond} className="flex gap-1 md:gap-2 mt-2 w-full">
       <input
-        className="border rounded px-2 py-1 text-xs flex-1"
+        className="border-0 md:border rounded-none md:rounded px-0 md:px-2 py-1 text-xs flex-1 bg-[#1a1a1a] text-white focus:outline-none"
         placeholder="Type your response..."
         value={response}
         onChange={e => setResponse(e.target.value)}
         disabled={loading}
       />
-      <button type="submit" className="bg-blue-600 text-white px-2 py-1 rounded text-xs" disabled={loading || !response}>
+      <button type="submit" className="bg-blue-600 text-white px-1 md:px-2 py-1 rounded-none md:rounded text-xs w-20 md:w-auto" disabled={loading || !response}>
         {loading ? "Sending..." : "Respond"}
       </button>
     </form>
