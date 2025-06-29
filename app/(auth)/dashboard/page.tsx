@@ -6,11 +6,11 @@ export default function DashboardHome() {
   return (
     <div className="max-h-dvh bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526] text-white">
       <nav className="sticky top-0 z-30 w-full bg-gradient-to-r from-[#232526] to-[#0f2027] backdrop-blur shadow flex items-center justify-between px-4 md:px-10 py-4 mb-10 border-b border-[#2c5364]">
-        <div className="flex items-center gap-3">
+        <div className=" hidden sm:items-center sm:flex gap-3">
           <FaTachometerAlt className="text-[#00c6ff]text-xl md:text-2xl" />
           <span className="font-extrabold text-xl md:text-2xl tracking-tight text-white drop-shadow">Admin Dashboard</span>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex max-sm:w-full justify-between items-center gap-8">
           <Link href="/" className="flex items-center gap-2 text-[#00c6ff] hover:text-[#fff] transition"><FaTachometerAlt /> Home</Link>
           <Link href="/dashboard" className="flex items-center gap-2 text-[#00c6ff] hover:text-[#fff] transition"><FaTachometerAlt /> Dashboard</Link>
           <LogoutButton />
