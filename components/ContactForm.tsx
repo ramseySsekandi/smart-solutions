@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { submitContact } from '@/app/actions/contact';
+import { useRouter } from 'next/navigation';
 
 const ContactForm = () => {
     
      const { register, handleSubmit, formState: { errors }, reset } = useForm<IContactInputs>();
       const [loading, setLoading] = useState(false);
+      const router = useRouter();
     
       const onSubmit = async (data: IContactInputs) => {
        try {
@@ -17,6 +19,7 @@ const ContactForm = () => {
         if (response?.success) {
         toast.success('Submitted Successfully')
         reset()
+        router.refresh();
         } else {
         toast.error('Something Went Wrong')
         }

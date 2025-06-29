@@ -5,10 +5,12 @@ import { useState } from 'react'
 import { IFeedbackInputs } from '@/types/mail-forms';
 import toast from 'react-hot-toast';
 import { submitFeedback } from '@/app/actions/feedback';
+import { useRouter } from 'next/navigation';
 
 const FeedbackForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFeedbackInputs>();
     const [formStatus, setFormStatus] = useState(false);
+    const router = useRouter();
 
     const onSubmit: SubmitHandler<IFeedbackInputs> = async (data) => {
       try {
@@ -21,6 +23,7 @@ const FeedbackForm = () => {
         if (res.success) {
           toast.success('Feedback sent successfully!');
           reset();
+          router.refresh();
         } else {
           toast.error('Failed to send feedback. Please try again later.');
         }

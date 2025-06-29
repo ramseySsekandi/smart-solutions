@@ -7,10 +7,12 @@ import toast from 'react-hot-toast';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { submitQuotation } from '@/app/actions/quotation';
+import { useRouter } from 'next/navigation';
 
 const QuotationForm = () => {
     const { register, handleSubmit, formState: { errors }, reset, control } = useForm<IQuotationInputs>();
     const [formStatus, setFormStatus] = useState(false);
+    const router = useRouter();
 
     const onSubmit: SubmitHandler<IQuotationInputs> = async (data) => {
       try {
@@ -25,6 +27,7 @@ const QuotationForm = () => {
         if (res.success) {
           toast.success('Quotation request sent successfully!');
           reset();
+          router.refresh();
         } else {
           toast.error('Failed to send quotation request. Please try again later.');
         }
