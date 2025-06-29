@@ -5,6 +5,7 @@ import { render } from '@react-email/components';
 import { ContactEmail } from '@/components/email/ContactEmail';
 import { QuotationEmail } from '@/components/email/QuotationEmail';
 import { FeedbackEmail } from '@/components/email/FeedbackEmail';
+import { revalidatePath } from 'next/cache';
 
 export async function respondToContactWithEmail(id: string, response: string) {
   const contact = await prisma.contact.update({
@@ -34,6 +35,7 @@ export async function respondToContactWithEmail(id: string, response: string) {
     console.error('Error sending contact response email:', error);
   }
   await prisma.contact.delete({ where: { id } });
+  revalidatePath('/dashboard/contacts');
   return { success: true };
 }
 
@@ -65,6 +67,7 @@ export async function respondToQuotationWithEmail(id: string, response: string) 
     console.error('Error sending quotation response email:', error);
   }
   await prisma.quotation.delete({ where: { id } });
+  revalidatePath('/dashboard/quotations');
   return { success: true };
 }
 
@@ -96,5 +99,6 @@ export async function respondToFeedbackWithEmail(id: string, response: string) {
     console.error('Error sending feedback response email:', error);
   }
   await prisma.feedback.delete({ where: { id } });
+  revalidatePath('/dashboard/feedback');
   return { success: true };
 } 

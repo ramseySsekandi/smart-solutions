@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/components';
 import { QuotationEmail } from '@/components/email/QuotationEmail';
+import { revalidatePath } from 'next/cache';
 
 export async function submitQuotation({ name, email, phone, service, description }: { name: string; email: string; phone: string; service: string; description: string }) {
   // Save to DB
@@ -45,5 +46,6 @@ export async function submitQuotation({ name, email, phone, service, description
     // Optionally, handle email failure (but still return success for DB save)
   }
 
+  revalidatePath('/dashboard/quotations');
   return { success: true };
 } 

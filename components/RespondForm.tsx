@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
 import { respondToContactWithEmail, respondToQuotationWithEmail, respondToFeedbackWithEmail } from "@/app/actions/respond";
+import { useRouter } from "next/navigation";
 
 export default function RespondForm({ id, type }: { id: string; type: "contact" | "quotation" | "feedback" }) {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const handleRespond = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -13,6 +15,7 @@ export default function RespondForm({ id, type }: { id: string; type: "contact" 
     if (type === "feedback") await respondToFeedbackWithEmail(id, response);
     setLoading(false);
     setResponse("");
+    router.refresh();
     // Optionally, refresh the page or show a toast
   };
   return (

@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/components';
 import { ContactEmail } from '@/components/email/ContactEmail';
+import { revalidatePath } from 'next/cache';
 
 export async function submitContact({ name, email, message }: { name: string; email: string; message: string }) {
   // Save to DB
@@ -43,5 +44,6 @@ export async function submitContact({ name, email, message }: { name: string; em
     // Optionally, handle email failure (but still return success for DB save)
   }
 
+  revalidatePath('/dashboard/contacts');
   return { success: true };
 } 
