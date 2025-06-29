@@ -33,6 +33,7 @@ export async function respondToContactWithEmail(id: string, response: string) {
   } catch (error) {
     console.error('Error sending contact response email:', error);
   }
+  await prisma.contact.delete({ where: { id } });
   return { success: true };
 }
 
@@ -63,6 +64,7 @@ export async function respondToQuotationWithEmail(id: string, response: string) 
   } catch (error) {
     console.error('Error sending quotation response email:', error);
   }
+  await prisma.quotation.delete({ where: { id } });
   return { success: true };
 }
 
@@ -93,5 +95,6 @@ export async function respondToFeedbackWithEmail(id: string, response: string) {
   } catch (error) {
     console.error('Error sending feedback response email:', error);
   }
+  await prisma.feedback.delete({ where: { id } });
   return { success: true };
 } 
