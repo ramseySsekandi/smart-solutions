@@ -39,7 +39,7 @@ export default function RegisterForm() {
 
   return (
     <div className="w-full max-w-xl bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-4 md:p-8 border-2 border-[#00c6ff]/40 ring-1 ring-white/30">
-      <h1 className="text-3xl font-bold text-[#00c6ff] mb-4 flex items-center gap-2 justify-center">
+      <h1 className="text-xl sm:text-3xl font-bold text-[#00c6ff] mb-4 flex items-center gap-2 justify-center">
         <FaUserPlus /> Register a new account
       </h1>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
