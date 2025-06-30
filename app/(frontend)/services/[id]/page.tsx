@@ -55,7 +55,7 @@ export default async function ServicePage({ params }: {
             <div className="lg:col-span-2">
               <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
                 <div className="p-8">
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                  <h1 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                     {service.title}
                   </h1>
                   <div className="prose prose-lg dark:prose-invert max-w-none">
