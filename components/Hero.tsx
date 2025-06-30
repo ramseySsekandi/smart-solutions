@@ -20,19 +20,15 @@ const Hero = () => {
           <h2 className='text-2xl font-bold'>Our Vision</h2>
           <Target size={48} />
           </div>
-          <p className='text-center px-4'>Our vision is to be a leading global provider of innovative solutions,
-             services, and support, empowering individuals, businesses, and communities to thrive and succeed.</p>
+          <p className='text-center px-4'>Our vision is to establish help centres and vocational training institutions across Africa, equipping under served communities with the tools and knowledge to not only survive but thrive in today’s competitive world.</p>
          </div>
          <div className="space-y-8 p-3 border-2 rounded-xl border-gray-300 space-x-4 mx-auto flex flex-col items-center justify-center">
          <div className="flex justify-center items-center gap-4 text-center">
           <h2 className='text-2xl font-bold'>Our Mission</h2>
           <Target size={48} />
           </div>
-          <p className='text-center px-4'>Our mission is to deliver exceptional value to our clients,
-             partners, and stakeholders through our diverse range of services, including technology, 
-             consultancy, real estate, event management, transport and logistics, media communication
-              and entertainment, tours and travel, publishing, and foundation services. We are committed
-              to excellence, integrity, and sustainability in all our endeavors.</p>
+          <p className='text-center px-4'>To consistently engage in acts of compassion and kindness, uplifting lives—especially those of widows and orphans—through sustainable support and empowerment. At Zodongo International Foundation, our work is only just beginning. With faith, passion, and purpose, we continue to rise—together—with the communities we serve.
+Join us. Support the mission. Be part of the #Zodongorising movement.</p>
          </div>
         </div>
         {/* Credibility */}
