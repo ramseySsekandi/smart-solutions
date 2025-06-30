@@ -63,22 +63,7 @@ export const servicesData = [
     image: "https://media.istockphoto.com/id/2154752387/photo/real-estate-concept-business-home-insurance-and-real-estate-protection-real-estate-investment.webp?a=1&b=1&s=612x612&w=0&k=20&c=zYNV4ydq_T7ldqR4v3aIwOshCZqBuEopq4AcFObrBf8=",
     darkImage: "https://media.istockphoto.com/id/2154752387/photo/real-estate-concept-business-home-insurance-and-real-estate-protection-real-estate-investment.webp?a=1&b=1&s=612x612&w=0&k=20&c=zYNV4ydq_T7ldqR4v3aIwOshCZqBuEopq4AcFObrBf8=",
     services: [
-      {
-        title: "Professional Catering – Zodongo Kitchen",
-        description: "Our catering service, operated under the renowned Zodongo Kitchen, offers a diverse and expertly curated menu to suit a variety of events—from intimate gatherings to large-scale corporate functions. We prioritize hygiene, flavour, and presentation, using only fresh, high-quality ingredients to create culinary experiences that delight guests and exceed expectations.Zodongo Kitchen is more than a kitchen with its ambition to orchestrate our idea of a state-of-the-art smart kitchenWe intend to build our own in-house Zodongo Kitchen Operating System (or ZKOS as we like to call it) - an operating system that has a collection of applications that helps optimize all aspects of our cloud kitchens in real-time, maximizing efficiency. For our restaurant partners, this means serving more customers in a shorter period of time and as efficiently as possible."
-      },
-      {
-        title: "Ushering Services",
-        description: "Our well-trained, courteous, and professional ushers are dedicated to ensuring smooth guest coordination, maintaining order, and enhancing the overall atmosphere of any event. Whether it's a formal corporate event or a festive celebration, our ushering team represents elegance, efficiency, and warmth."
-      },
-      {
-        title: "Event Decoration",
-        description: "We offer creative and customized event decoration solutions that transform ordinary spaces into captivating venues. From themed concepts to minimalist elegance, our team designs with precision and aesthetic flair to bring your vision to life, ensuring every detail contributes to a cohesive and visually stunning experience."
-      },
-      {
-        title: "Bakery & Cakery Services",
-        description: "Our bakery division specializes in bespoke cakes and baked goods for all occasions. From elegant wedding cakes to themed birthday treats, we combine flavour, artistry, and creativity to produce cakes that are as delicious as they are visually impressive"
-      }
+     
     ],
   },
   {
@@ -88,22 +73,6 @@ export const servicesData = [
     image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hhcml0eSUyMGZvdW5kYXRpb258ZW58MHx8MHx8fDA%3D",
     darkImage: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hhcml0eSUyMGZvdW5kYXRpb258ZW58MHx8MHx8fDA%3D",
     services: [
-      {
-        title: "Professional Catering – Zodongo Kitchen",
-        description: "Our catering service, operated under the renowned Zodongo Kitchen, offers a diverse and expertly curated menu to suit a variety of events—from intimate gatherings to large-scale corporate functions. We prioritize hygiene, flavour, and presentation, using only fresh, high-quality ingredients to create culinary experiences that delight guests and exceed expectations.Zodongo Kitchen is more than a kitchen with its ambition to orchestrate our idea of a state-of-the-art smart kitchenWe intend to build our own in-house Zodongo Kitchen Operating System (or ZKOS as we like to call it) - an operating system that has a collection of applications that helps optimize all aspects of our cloud kitchens in real-time, maximizing efficiency. For our restaurant partners, this means serving more customers in a shorter period of time and as efficiently as possible."
-      },
-      {
-        title: "Ushering Services",
-        description: "Our well-trained, courteous, and professional ushers are dedicated to ensuring smooth guest coordination, maintaining order, and enhancing the overall atmosphere of any event. Whether it's a formal corporate event or a festive celebration, our ushering team represents elegance, efficiency, and warmth."
-      },
-      {
-        title: "Event Decoration",
-        description: "We offer creative and customized event decoration solutions that transform ordinary spaces into captivating venues. From themed concepts to minimalist elegance, our team designs with precision and aesthetic flair to bring your vision to life, ensuring every detail contributes to a cohesive and visually stunning experience."
-      },
-      {
-        title: "Bakery & Cakery Services",
-        description: "Our bakery division specializes in bespoke cakes and baked goods for all occasions. From elegant wedding cakes to themed birthday treats, we combine flavour, artistry, and creativity to produce cakes that are as delicious as they are visually impressive"
-      }
     ],
   },
   {
@@ -143,20 +112,20 @@ export const servicesData = [
     darkImage: "https://media.istockphoto.com/id/1488438637/photo/row-of-homes.jpg?s=612x612&w=0&k=20&c=kVsYFuVKHD8FOb9jxPgC134M8Q8yJ61cmsSRtqJPkIM=",
     services: [
       {
-        title: "Professional Catering – Zodongo Kitchen",
-        description: "Our catering service, operated under the renowned Zodongo Kitchen, offers a diverse and expertly curated menu to suit a variety of events—from intimate gatherings to large-scale corporate functions. We prioritize hygiene, flavour, and presentation, using only fresh, high-quality ingredients to create culinary experiences that delight guests and exceed expectations.Zodongo Kitchen is more than a kitchen with its ambition to orchestrate our idea of a state-of-the-art smart kitchenWe intend to build our own in-house Zodongo Kitchen Operating System (or ZKOS as we like to call it) - an operating system that has a collection of applications that helps optimize all aspects of our cloud kitchens in real-time, maximizing efficiency. For our restaurant partners, this means serving more customers in a shorter period of time and as efficiently as possible."
+        title: "Property & Facility Management.",
+        description: "We effectively oversee your tenants and offer guidance on optimizing your property to maximize rental income from your investment. Our focus encompasses residential, commercial, and industrial properties, and I take pride in leading a team of committed professionals who strive to deliver outstanding real estate solutions to our clients. Moreover, in property management, we undertake the following key responsibilities as property managers: • Rent Collection • Property Maintenance and Renovations • Property Advertising • General Property Oversight."
       },
       {
-        title: "Ushering Services",
-        description: "Our well-trained, courteous, and professional ushers are dedicated to ensuring smooth guest coordination, maintaining order, and enhancing the overall atmosphere of any event. Whether it's a formal corporate event or a festive celebration, our ushering team represents elegance, efficiency, and warmth."
+        title: "Marketing and Brokerage",
+        description: "We combine brokerage and marketing services to effectively connect landlords with tenants and sellers with buyers, generating interest, leads, and facilitating transactions. Our brokerage services include property valuation, listings, showings, negotiation, contract management, and closing support. In addition, we offer a range of marketing services such as online and traditional marketing, virtual tours, networking, staging and photography, lead generation, content marketing, email marketing, and social media marketing."
       },
       {
-        title: "Event Decoration",
-        description: "We offer creative and customized event decoration solutions that transform ordinary spaces into captivating venues. From themed concepts to minimalist elegance, our team designs with precision and aesthetic flair to bring your vision to life, ensuring every detail contributes to a cohesive and visually stunning experience."
+        title: "Pre-Construction & Structural Construction",
+        description: "We assist our clients in the planning and preparation stages prior to the commencement of construction, and we also engage in the actual construction process, ensuring a high standard of excellence. Our Pre-construction Services include: • Feasibility Studies • Budgeting and Cost Estimating • Scheduling and Phasing • Design Development • Permitting and Entitlements • Risk Management • Material Procurement • Subcontractor Selection Our Structural Construction Services encompass: • Site Preparation • Foundation Work • Framing • Roofing • Exterior Walls • Interior Walls • Plumbing • Electrical Work • Insulation • Drywall and Finishing • Flooring • Painting"
       },
       {
-        title: "Bakery & Cakery Services",
-        description: "Our bakery division specializes in bespoke cakes and baked goods for all occasions. From elegant wedding cakes to themed birthday treats, we combine flavour, artistry, and creativity to produce cakes that are as delicious as they are visually impressive"
+        title: "Real Estate Investment Consultancy",
+        description: "We assist you in maximizing your real estate investments through expert advice and strategic planning. Our comprehensive approach focuses on developing tailored investment strategies to meet your specific needs and financial objectives. Our services include: • Development of Investment Strategies • Market Research and Analysis • Valuation and Feasibility Assessments • Risk Management Advisory • Portfolio Management • Optimization of Asset Management • Negotiation of Investment Deals to Secure Favorable Terms • Property Assessment • Management of Construction Risks • Ensuring Regulatory Compliance • Property Development Services • Client Consultation and Relationship Management • Property Management and Operational Support • Financial Performance Analysis • Assistance with Resale • Financial Management • Networking Opportunities."
       }
     ],
   },
@@ -201,25 +170,25 @@ export const servicesData = [
   {
     id: "publishing",
     title: "Publishing",
-    description: "Quality content and publishing services. Our publishing services provide expert guidance and support for authors and publishers, ensuring impactful publications. From editing and design to distribution and marketing, we handle every aspect of the publishing process. Whether you’re an aspiring author or an established publisher, we help bring your vision to life.",
+    description: "Words are more than just text—they're powerful tools that spark ideas, build connections, and drive meaningful change. As your trusted content creation partner, we specialize in delivering content that not only informs but inspires action.",
     image: "https://media.istockphoto.com/id/1407890983/vector/newspaper-realistic-vector-illustration-background-of-the-page-headline-and-cover-of-old.jpg?s=612x612&w=0&k=20&c=uyB-_t4SbgkZxpc2CPk8_ELgNcnHTuUBPenHTIiRZIc=",
     darkImage: "https://media.istockphoto.com/id/1407890983/vector/newspaper-realistic-vector-illustration-background-of-the-page-headline-and-cover-of-old.jpg?s=612x612&w=0&k=20&c=uyB-_t4SbgkZxpc2CPk8_ELgNcnHTuUBPenHTIiRZIc=",
     services: [
       {
-        title: "Professional Catering – Zodongo Kitchen",
-        description: "Our catering service, operated under the renowned Zodongo Kitchen, offers a diverse and expertly curated menu to suit a variety of events—from intimate gatherings to large-scale corporate functions. We prioritize hygiene, flavour, and presentation, using only fresh, high-quality ingredients to create culinary experiences that delight guests and exceed expectations.Zodongo Kitchen is more than a kitchen with its ambition to orchestrate our idea of a state-of-the-art smart kitchenWe intend to build our own in-house Zodongo Kitchen Operating System (or ZKOS as we like to call it) - an operating system that has a collection of applications that helps optimize all aspects of our cloud kitchens in real-time, maximizing efficiency. For our restaurant partners, this means serving more customers in a shorter period of time and as efficiently as possible."
+        title: "Our Philosophy",
+        description: "We don’t just write—we communicate, strategize, and elevate. Our writing solutions are born from a unique blend of creativity, precision, and deep industry insight, covering a wide array of domains. Whether your needs are academic, corporate, creative, or promotional, we bring your ideas to life through compelling, custom-crafted content."
       },
       {
-        title: "Ushering Services",
-        description: "Our well-trained, courteous, and professional ushers are dedicated to ensuring smooth guest coordination, maintaining order, and enhancing the overall atmosphere of any event. Whether it's a formal corporate event or a festive celebration, our ushering team represents elegance, efficiency, and warmth."
+        title: "Our Expertise Spans",
+        description: "•	Academia & Research •	Corporate Communications •	Media & Entertainment •	Marketing & Branding •	Literary Projects (Books, Scripts, and Poetry)"
       },
       {
-        title: "Event Decoration",
-        description: "We offer creative and customized event decoration solutions that transform ordinary spaces into captivating venues. From themed concepts to minimalist elegance, our team designs with precision and aesthetic flair to bring your vision to life, ensuring every detail contributes to a cohesive and visually stunning experience."
+        title: "Why Choose Zodongo?",
+        description: "•	Client-Centered Approach: We take the time to understand your vision, no matter how complex or unique. •	Strategic Thinking: Our writing is backed by purpose, designed to fit into the larger context of your goals. •	Human Touch: In a world of AI-generated content, we pride ourselves on 100% human-written work that reflects emotion, authenticity, and artistry. •	Uncompromising Quality: Every sentence we write is carefully structured by skilled writers who know how to craft language that connects. •	Cost-Effective Excellence: We deliver top-tier writing at competitive prices, ensuring value without compromise. Imagine a partner who listens, understands, and transforms your vision into captivating content that stands out and delivers results."
       },
       {
-        title: "Bakery & Cakery Services",
-        description: "Our bakery division specializes in bespoke cakes and baked goods for all occasions. From elegant wedding cakes to themed birthday treats, we combine flavour, artistry, and creativity to produce cakes that are as delicious as they are visually impressive"
+        title: "Our Services",
+        description: "•	Books & Scripts – From fiction and memoirs to screenplays and stage plays, we bring your stories to life. •	Marketing Copy – Persuasive, brand-aligned content designed to attract and convert. •	Corporate Writing – Professional reports, proposals, speeches, and internal communication pieces. •	Resume Writing – Standout resumes and cover letters tailored for your career goals. •	Poetry – Custom poetic compositions for personal, public, or commercial use. •	Zodongo Magazine – Our flagship publication showcasing insightful, thought-provoking content across industries."
       }
     ],
   },
